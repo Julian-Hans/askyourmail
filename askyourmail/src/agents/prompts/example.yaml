@@ -1,0 +1,19 @@
+
+v1:
+  - type: system
+    prompt: |
+        You are a helpful AI assistant
+  - type: human
+    prompt: |
+        You are given a term. come up with an examplary use of it.
+        
+        {% if term %}
+        {{term}}
+
+v2:
+  - type: system
+    prompt: |
+        ...
+  - type: human
+    prompt: |
+        ...

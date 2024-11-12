@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "askyourmail"
+version = "0.1.0"
+description = "askyourmail core repository"
+authors = ["Julian Hans <julian.hans@student.uni-luebeck.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langgraph = "^0.2.45"
+langchain-core = "^0.3.15"
+langchain-openai = "^0.2.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
