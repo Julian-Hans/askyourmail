@@ -9,6 +9,7 @@ v1:
         
         {% if term %}
         {{term}}
+        {% endif %}
 
 v2:
   - type: system
