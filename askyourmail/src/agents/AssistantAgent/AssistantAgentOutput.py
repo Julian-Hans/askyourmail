@@ -1,10 +1,10 @@
 
+from langchain_core.pydantic_v1 import BaseModel, Field
 
-class AssistantAgentOutput():
+class AssistantAgentOutput(BaseModel):
     """The output object for the AssistantAgent.
     """
-    def __init__(self, result: str):
-        self.result = result
+    result: str = Field(description="The result of the AssistantAgent.")
 
     def to_dict(self):
         """Converts the object to a dictionary.

@@ -9,6 +9,7 @@ from typing import Literal
 
 # local imports
 from askyourmail.src.agents.AssistantAgent.AssistantAgentInput import AssistantAgentInput
+from askyourmail.src.agents.AssistantAgent.AssistantAgentOutput import AssistantAgentOutput
 from askyourmail.src.util.Constants import *
 from askyourmail.src.graphs.states.States import AgentState
 from askyourmail.src.agents.AssistantAgent.AssistantAgent import AssistantAgent
@@ -20,7 +21,7 @@ class MainGraph():
         #self.assistant_agent_reflection = AssistantAgent(llm) # TODO: add reflection
         self.graph = self._compile_graph()
 
-    def _compile_graph() -> CompiledGraph:
+    def _compile_graph(self) -> CompiledGraph:
         workflow = StateGraph(AgentState)
 
         workflow.add_node("assistant", self._assistant_node)
@@ -36,19 +37,22 @@ class MainGraph():
         #    }
         #)
 
+        workflow.set_entry_point("assistant")
         return workflow.compile()
     
     def _assistant_reflector_router(self, state: AgentState) -> Literal["__continue__", "__end__"]:
         return "__end__"
     
     def _assistant_node(self, state: AgentState) -> AgentState:
-        input: AssistantAgentInput = state["assistantInput"]
+        input: AssistantAgentInput = state["assistantAgentInput"]
 
         # invoke agent
-        result = self.assistant_agent.invoke(input)
-
+        #result = self.assistant_agent.invoke(input) TODO: actually invoke agent
+        result: AssistantAgentOutput = {
+            "text": "Hello world (output)!"
+        }
         # package results back into state
-        state["assistantOutput"] = result
+        state["assistantAgentOutput"] = result
 
         return state
     
