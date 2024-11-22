@@ -5,7 +5,6 @@ from askyourmail.src.agents.AssistantAgent.AssistantAgentInput import AssistantA
 from askyourmail.src.graphs.MainGraph import MainGraph
 
 # external imports
-import os
 from langsmith import Client
 
 
@@ -21,7 +20,7 @@ def main(state: AgentState) -> None:
 
 
 if __name__ == "__main__":
-    state: AgentState ={
+    state: AgentState = {
         "assistantAgentInput": AssistantAgentInput("Hello world (input)!"),
         "assistantAgentOutput": None
     }

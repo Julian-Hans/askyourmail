@@ -49,7 +49,7 @@ class MainGraph():
         # invoke agent
         #result = self.assistant_agent.invoke(input) TODO: actually invoke agent
         result: AssistantAgentOutput = {
-            "text": "Hello world (output)!"
+            "text": state["assistantAgentInput"].term*2
         }
         # package results back into state
         state["assistantAgentOutput"] = result
