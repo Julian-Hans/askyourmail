@@ -1,6 +1,7 @@
 # external imports
 import os
 import logging as log
+from dotenv import load_dotenv
 
 LOGGING_LEVEL = log.INFO
 
@@ -9,10 +10,12 @@ log.basicConfig(
     level=LOGGING_LEVEL
 )
 
-MODEL_NAME = "gpt-4-turbo"
-OPENAI_API_BASE = "http://localhost:4000"
-OPENAI_API_KEY = "" # this should not be in here
-LANGCHAIN_API_KEY = "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" # this should not be in here
+load_dotenv()
+
+MODEL_NAME = "gpt-3.5-turbo"
+OPENAI_API_BASE = "https://api.openai.com/v1"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
 
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = f"askyourmail"
