@@ -13,6 +13,7 @@ log.basicConfig(
 load_dotenv()
 
 MODEL_NAME = "gpt-3.5-turbo"
+EMBEDDING_MODEL_NAME = "text-embedding-3-small"
 OPENAI_API_BASE = "https://api.openai.com/v1"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
