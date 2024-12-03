@@ -10,9 +10,10 @@ log.basicConfig(
     level=LOGGING_LEVEL
 )
 
-load_dotenv()
+load_dotenv("project.env")
 
 MODEL_NAME = "gpt-3.5-turbo"
+EMBEDDING_MODEL_NAME = "text-embedding-3-small"
 OPENAI_API_BASE = "https://api.openai.com/v1"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
@@ -20,5 +21,5 @@ LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = f"askyourmail"
 os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
-os.environ["LANGCHAIN_API_KEY"] = LANGCHAIN_API_KEY
-os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+# os.environ["LANGCHAIN_API_KEY"] = LANGCHAIN_API_KEY
+# os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
