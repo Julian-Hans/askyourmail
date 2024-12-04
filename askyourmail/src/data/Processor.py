@@ -7,18 +7,18 @@ from chromadb.utils.embedding_functions.openai_embedding_function import OpenAIE
 
 
 # local imports
-from askyourmail.src.data.Emails import Email
-from askyourmail.src.data.Conversations import Conversation
+from askyourmail.src.data.Email import Email
+from askyourmail.src.data.Conversation import Conversation
 from askyourmail.src.util.Constants import *
 
 
 class Processor:
-    def __init__(self, chromo_db_path="chromo_db"):
+    def __init__(self, chroma_db_path=CHROMA_DB_PATH):
         """
         Initialize the EmailThreadProcessor with ChromaDB path and Kaggle configurations.
         """
-        self.chromo_db_path = chromo_db_path
-        self.client = chromadb.PersistentClient(path=chromo_db_path)
+        self.chroma_db_path = chroma_db_path
+        self.client = chromadb.PersistentClient(path=chroma_db_path)
         self.collection = None
     
     def initialize_collection(self, collection_name, model_name, api_base, api_key):
@@ -42,6 +42,7 @@ class Processor:
             embedding_function=embedding_function,
             metadata={"hnsw:space": "cosine"}
             )
+        
     def download_and_load_data(self, kaggle_dataset_name):
         """
             Download the dataset from Kaggle and load it into a Pandas DataFrame.
@@ -53,7 +54,7 @@ class Processor:
                 pd.DataFrame: Loaded dataset as a Pandas DataFrame.
         """
         path = kagglehub.dataset_download(kaggle_dataset_name)
-        print("Path to dataset files:", path)
+        log.info("Path to dataset files:", path)
         csv_path = f"{path}/CSV/email_thread_details.csv"
         df = pd.read_csv(csv_path)
         df = df.iloc[:len(df)//2].reset_index(drop=True)
@@ -112,26 +113,26 @@ class Processor:
                         ids=[str(uuid.uuid1())]
                     )
 
-        print("Emails successfully inserted into vector store!")
+        log.info("Emails successfully inserted into vector store!")
 
     def run_pipline(self, collection_name, model_name, api_base, api_key):
-        kagglehub_dataset_name = "marawanxmamdouh/email-thread-summary-dataset"
+        kagglehub_dataset_name = KAGGLEHUB_DATASET_NAME
 
-        print("Starting pipeline...")
-        print("\nInitializing collection...")
+        log.info("Starting pipeline...")
+        log.info("\nInitializing collection...")
         self.initialize_collection(collection_name, model_name, api_base, api_key)
-        print("Collection initialized successfully!")
-        print("\nLoading email data from Kaggle...")
+        log.info("Collection initialized successfully!")
+        log.info("\nLoading email data from Kaggle...")
         emails_df = self.download_and_load_data(kagglehub_dataset_name)
-        print("Email data loaded successfully!")
+        log.info("Email data loaded successfully!")
 
-        print("\nProcessing emails...")
+        log.info("\nProcessing emails...")
         emails, conversation_list = self.process_emails(emails_df)
-        print("Emails processed successfully!")
+        log.info("Emails processed successfully!")
 
-        print("\nAdding emails to collection...")
+        log.info("\nAdding emails to collection...")
         self.add_emails_to_vector_store(conversation_list)
-        print("Pipeline completed successfully!")
+        log.info("Pipeline completed successfully!")
 
         
 
@@ -140,9 +141,9 @@ if __name__ == "__main__":
     # processor = Processor()
     # processor.run_pipline("emails", EMBEDDING_MODEL_NAME, OPENAI_API_BASE, OPENAI_API_KEY)
 
-    client = chromadb.PersistentClient(path="chromo_db")
+    client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
     collection = client.get_collection("emails")
     
-    print(collection.count())
+    log.info(collection.count())
     
     

@@ -1,0 +1,26 @@
+
+v1:
+  - type: system
+    prompt: |
+        You are a helpful AI assistant and an expert in informal conversation.
+  - type: human
+    prompt: |
+        You are given a natural language query, as well as an email with metadata. Your task is to determine whether the email contains the information/answer that is requested in the query.
+        
+        Query: {{query}}
+        Email Metadata:
+        thread_id: {{ thread_id }}
+        subject: {{ subject }}
+        timestamp: {{ timestamp }}
+        from: {{ from }}
+        to: {{ to }}
+        body: {{ body }}
+        
+
+v2:
+  - type: system
+    prompt: |
+        ...
+  - type: human
+    prompt: |
+        ...
