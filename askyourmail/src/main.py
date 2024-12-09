@@ -17,18 +17,19 @@ client = Client()
 def main(state: AgentState) -> None:
     log.info("Starting main")
     main_graph = MainGraph()
-    main_graph.run(state)
+    final_state = main_graph.run(state)
+    
+    for email in final_state["retrievedEmails"]:
+        log.info(f"Retrieved Mail ID: {email.thread_id}")
 
+    log.info("-------")
+    for email in final_state["relevantEmails"]:
+        log.info(f"Relevant Mail ID: {email.thread_id}")
 
 if __name__ == "__main__":
 
-    sample_email_0 = Email(thread_id="0", subject="Python learning resources", from_="learn@python.com", to="me@me.com", body="Here are some resources to learn Python: https://www.python.org/", timestamp="2022-01-01")
-    sample_email_1 = Email(thread_id="1", subject="Strawberry Cakes", from_="recipes@cooking.com", to="me@me.com", body="Discover our new strawberrycake recipes", timestamp="2020-01-01")
-    sample_emails = [sample_email_0, sample_email_1]
-
     state: AgentState = {
-        "query": "I received an email about learning python. Can you help me find it?",
-        "retrievedEmails" : sample_emails,
-        "relevantEmails": []
+        "query": "Who was invited to the lunch meeting on may 5th 2000?",
     }
     main(state = state)
+    

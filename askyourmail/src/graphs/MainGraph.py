@@ -6,6 +6,9 @@ from langgraph.graph import END, StateGraph
 from langgraph.graph.graph import CompiledGraph
 from typing import Literal
 from typing import List
+from langchain_chroma.vectorstores import Chroma
+import chromadb
+from langchain_openai import OpenAIEmbeddings
 
 
 # local imports
@@ -17,6 +20,7 @@ from askyourmail.src.agents.AssistantAgent.AssistantAgent import AssistantAgent
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgent import ReflectionAgent
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgentInput import ReflectionAgentInput
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgentOutput import ReflectionAgentOutput
+from askyourmail.src.data.Email import Email
 
 class MainGraph():
     def __init__(self) -> None:
@@ -27,8 +31,10 @@ class MainGraph():
     def _compile_graph(self) -> CompiledGraph:
         workflow = StateGraph(AgentState)
 
-        #workflow.add_node("chroma_retrieval", self._chroma_retrieval_node)
+        workflow.add_node("chroma_retrieval", self._chroma_retrieval_node)
         workflow.add_node("reflection", self._reflection_node)
+
+        workflow.add_edge("chroma_retrieval", "reflection")
         workflow.add_edge("reflection", END)
         #workflow.add_node("filter_extraction", self._filter_extraction_node)
 
@@ -58,12 +64,44 @@ class MainGraph():
         #    }
         #)
 
-        workflow.set_entry_point("reflection")
+        workflow.set_entry_point("chroma_retrieval")
         return workflow.compile()
     
     def _assistant_reflector_router(self, state: AgentState) -> Literal["__continue__", "__end__"]:
         return "__end__"
     
+    def _chroma_retrieval_node(self, state: AgentState) -> AgentState:
+        # get emails from chroma (similarity search with scores and top k)
+        embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL_NAME)
+        client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
+
+        chroma_db = Chroma(
+            client=client,
+            collection_name="emails",
+            embedding_function=embeddings,
+        )
+
+        docs_results = chroma_db.similarity_search_with_relevance_scores(state["query"], k=RETRIEVAL_K)
+        retrieved_emails = []
+        # create emails from retrieved docs
+        for doc in docs_results:
+            _tmp_mail = Email(thread_id=doc[0].metadata["thread_id"], subject=doc[0].metadata["subject"], from_=doc[0].metadata["from"], to=doc[0].metadata["to"], body=doc[0].metadata["body"], timestamp=doc[0].metadata["timestamp"])
+            retrieved_emails.append(_tmp_mail)
+
+        # Deduplicate emails (temporary solution)
+        unique_emails = []
+        seen = set()
+        for email in retrieved_emails:
+            email_tuple = (email.thread_id, email.subject, email.from_, email.to, email.body, email.timestamp)
+            if email_tuple not in seen:
+                seen.add(email_tuple)
+                unique_emails.append(email)
+        retrieved_emails = unique_emails
+
+        # package emails back into state
+        state["retrievedEmails"] = retrieved_emails
+        return state
+
     def _reflection_node(self, state: AgentState) -> AgentState:
         # get emails to be graded from state
         input: List[ReflectionAgentInput] = []
@@ -93,8 +131,11 @@ class MainGraph():
 
         return state
     
-    def run(self, state: AgentState) -> None:
-        events = self.graph.stream(state, {"recursion_limit": 25})
-        for s in events:
-            print(s)
-            print("----")
+    def run(self, state: AgentState) -> AgentState:
+        events = self.graph.stream(state, {"recursion_limit": 25}, stream_mode="values")
+        final_state = None  # Initialize a variable to hold the final state
+
+        for event in events:
+            final_state = event  # Update the final state with the latest state
+
+        return final_state  # Return the final state after processing all events

@@ -12,7 +12,7 @@ log.basicConfig(
 
 load_dotenv("project.env")
 
-MODEL_NAME = "gpt-3.5-turbo"
+MODEL_NAME = "gpt-4o-mini"
 EMBEDDING_MODEL_NAME = "text-embedding-3-small"
 OPENAI_API_BASE = "https://api.openai.com/v1"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -24,3 +24,5 @@ os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
 
 KAGGLEHUB_DATASET_NAME = "marawanxmamdouh/email-thread-summary-dataset"
 CHROMA_DB_PATH = "chroma_db"
+
+RETRIEVAL_K = 10
