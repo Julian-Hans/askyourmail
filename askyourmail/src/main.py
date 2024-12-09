@@ -5,8 +5,17 @@ from askyourmail.src.agents.AssistantAgent.AssistantAgentInput import AssistantA
 from askyourmail.src.graphs.MainGraph import MainGraph
 from askyourmail.src.data.Email import Email
 
+
 # external imports
 from langsmith import Client
+import gradio as gr
+import logging
+
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger(__name__)
+
+
+
 
 
 # init langsmith client
