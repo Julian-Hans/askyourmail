@@ -4,6 +4,8 @@ from askyourmail.src.graphs.states.States import AgentState
 from askyourmail.src.agents.AssistantAgent.AssistantAgentInput import AssistantAgentInput
 from askyourmail.src.graphs.MainGraph import MainGraph
 from askyourmail.src.data.Email import Email
+import gradio as gr
+
 
 # external imports
 from langsmith import Client
