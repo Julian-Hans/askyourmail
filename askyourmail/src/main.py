@@ -26,10 +26,13 @@ def main(state: AgentState) -> None:
     for email in final_state["relevantEmails"]:
         log.info(f"Relevant Mail ID: {email.thread_id}")
 
+    log.info("-------")
+    log.info(f"Query: {final_state['query']}")
+    log.info(f"Answer: {final_state['answer']}")
 if __name__ == "__main__":
 
     state: AgentState = {
-        "query": "Who was invited to the lunch meeting on may 5th 2000?",
+        "query": "Is there any lunch meeting planned? Who is coming?",
     }
     main(state = state)
     

@@ -10,5 +10,6 @@ class AgentState(TypedDict):
     query: str
     retrievedEmails: List[Email]
     relevantEmails: List[Email]
+    answer: str
 
 

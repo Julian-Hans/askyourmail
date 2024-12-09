@@ -12,11 +12,11 @@ from langchain_openai import OpenAIEmbeddings
 
 
 # local imports
-from askyourmail.src.agents.AssistantAgent.AssistantAgentInput import AssistantAgentInput
-from askyourmail.src.agents.AssistantAgent.AssistantAgentOutput import AssistantAgentOutput
+from askyourmail.src.agents.AnswerAgent.AnswerAgentInput import AnswerAgentInput
+from askyourmail.src.agents.AnswerAgent.AnswerAgentOutput import AnswerAgentOutput
 from askyourmail.src.util.Constants import *
 from askyourmail.src.graphs.states.States import AgentState
-from askyourmail.src.agents.AssistantAgent.AssistantAgent import AssistantAgent
+from askyourmail.src.agents.AnswerAgent.AnswerAgent import AnswerAgent
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgent import ReflectionAgent
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgentInput import ReflectionAgentInput
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgentOutput import ReflectionAgentOutput
@@ -26,6 +26,7 @@ class MainGraph():
     def __init__(self) -> None:
         llm = ChatOpenAI(model=MODEL_NAME, openai_api_base=OPENAI_API_BASE)
         self.reflection_agent = ReflectionAgent(llm)
+        self.answer_agent = AnswerAgent(llm)
         self.graph = self._compile_graph()
 
     def _compile_graph(self) -> CompiledGraph:
@@ -33,9 +34,12 @@ class MainGraph():
 
         workflow.add_node("chroma_retrieval", self._chroma_retrieval_node)
         workflow.add_node("reflection", self._reflection_node)
+        workflow.add_node("answer_", self._answer_node)
 
         workflow.add_edge("chroma_retrieval", "reflection")
-        workflow.add_edge("reflection", END)
+        workflow.add_edge("reflection", "answer_")
+        workflow.add_edge("answer_", END)
+
         #workflow.add_node("filter_extraction", self._filter_extraction_node)
 
         #workflow.add_edge("chroma_retrieval", "reflection")
@@ -51,7 +55,7 @@ class MainGraph():
         #workflow.add_edge("filter_extraction", "chroma_retrieval")
         #workflow.add_edge("chroma_retrieval", "reflection")
 
-        #workflow.add_node("assistant", self._assistant_node)
+        #workflow.add_node("Answer", self._assistant_node)
 
        #workflow.add_edge("assistant", "assistant_reflector")
 
@@ -120,6 +124,19 @@ class MainGraph():
         log.info(f"ReflectionAgent found {len(relevant_emails)} emails relevant out of {len(input)} retrieved candidates.")
         state["relevantEmails"] = relevant_emails
         return state
+
+    def _answer_node(self, state: AgentState) -> AgentState:
+        # get relevant emails from state to answer the query
+        input: AnswerAgentInput = AnswerAgentInput(state["query"], state["relevantEmails"])
+        
+        result = self.answer_agent.invoke(input)
+
+        # package result back into the state
+        state["answer"] = result.result # TODO: bad naming
+        
+        log.info(f"AnswerAgent generated answer: {result.result}")
+        return state
+
 
     def _assistant_node(self, state: AgentState) -> AgentState:
         input: AssistantAgentInput = state["assistantAgentInput"]

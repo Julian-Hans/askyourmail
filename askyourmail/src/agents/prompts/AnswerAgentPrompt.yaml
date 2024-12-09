@@ -1,0 +1,29 @@
+
+v1:
+  - type: system
+    prompt: |
+        You are a helpful AI assistant and an expert in informal conversation.
+  - type: human
+    prompt: |
+        You are given a natural language query, as well as a list of emails, including their metadata. Your task is to respond to the query, given only the information from the emails and their metadata. Do not use any external information. If you cannot find the answer in the emails, respond with "I am sorry, I could not find the requested information in the provided Emails". You will also output the thread_ids of the emails that contain the answer to the query. Only include the thread_ids that you are citing.
+
+        Query: {{query}}
+
+        Emails and their Metadatas:
+        {% for email in emails %}
+        thread_id: {{ email.thread_id }}
+        subject: {{ email.subject }}
+        timestamp: {{ email.timestamp }}
+        from: {{ email.from }}
+        to: {{ email.to }}
+        body: {{ email.body }}
+        {% endfor %}
+        
+
+v2:
+  - type: system
+    prompt: |
+        ...
+  - type: human
+    prompt: |
+        ...
