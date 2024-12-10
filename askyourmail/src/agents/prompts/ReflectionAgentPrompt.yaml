@@ -12,6 +12,7 @@ v1:
         thread_id: {{ thread_id }}
         subject: {{ subject }}
         timestamp: {{ timestamp }}
+        date: {{ date }}
         from: {{ from }}
         to: {{ to }}
         body: {{ body }}

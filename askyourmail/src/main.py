@@ -41,7 +41,7 @@ def main(state: AgentState) -> None:
 if __name__ == "__main__":
 
     state: AgentState = {
-        "query": "Is there any lunch meeting planned? Who is coming?",
+        "query": """What plan is there for the 5th of may 2000? I think joshua hauser sent an email!""",
     }
     main(state = state)
     

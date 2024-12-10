@@ -20,11 +20,14 @@ from askyourmail.src.agents.AnswerAgent.AnswerAgent import AnswerAgent
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgent import ReflectionAgent
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgentInput import ReflectionAgentInput
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgentOutput import ReflectionAgentOutput
+from askyourmail.src.agents.FilterAgent.FilterAgent import FilterAgent
+from askyourmail.src.agents.FilterAgent.FilterAgentInput import FilterAgentInput
 from askyourmail.src.data.Email import Email
 
 class MainGraph():
     def __init__(self) -> None:
         llm = ChatOpenAI(model=MODEL_NAME, openai_api_base=OPENAI_API_BASE)
+        self.filter_agent = FilterAgent(llm)
         self.reflection_agent = ReflectionAgent(llm)
         self.answer_agent = AnswerAgent(llm)
         self.graph = self._compile_graph()
@@ -32,10 +35,12 @@ class MainGraph():
     def _compile_graph(self) -> CompiledGraph:
         workflow = StateGraph(AgentState)
 
+        workflow.add_node("filter", self._filter_node)
         workflow.add_node("chroma_retrieval", self._chroma_retrieval_node)
         workflow.add_node("reflection", self._reflection_node)
         workflow.add_node("answer_", self._answer_node)
 
+        workflow.add_edge("filter", "chroma_retrieval")
         workflow.add_edge("chroma_retrieval", "reflection")
         workflow.add_edge("reflection", "answer_")
         workflow.add_edge("answer_", END)
@@ -68,12 +73,25 @@ class MainGraph():
         #    }
         #)
 
-        workflow.set_entry_point("chroma_retrieval")
+        workflow.set_entry_point("filter")
         return workflow.compile()
     
     def _assistant_reflector_router(self, state: AgentState) -> Literal["__continue__", "__end__"]:
         return "__end__"
     
+    def _filter_node(self, state: AgentState) -> AgentState:
+        # get query from state
+        query = state["query"]
+        filterAgentInput = FilterAgentInput(query)
+        # filter query
+        result = self.filter_agent.invoke(filterAgentInput)
+
+        # package collected data back into state
+        state["extractedFrom"] = result.from_
+        state["extractedTime"] = result.time
+
+        return state
+
     def _chroma_retrieval_node(self, state: AgentState) -> AgentState:
         # get emails from chroma (similarity search with scores and top k)
         embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL_NAME)
@@ -81,16 +99,23 @@ class MainGraph():
 
         chroma_db = Chroma(
             client=client,
-            collection_name="emails",
+            collection_name=COLLECTION_NAME,
             embedding_function=embeddings,
         )
 
+        # standard similarity search
         docs_results = chroma_db.similarity_search_with_relevance_scores(state["query"], k=RETRIEVAL_K)
         retrieved_emails = []
         # create emails from retrieved docs
         for doc in docs_results:
             _tmp_mail = Email(thread_id=doc[0].metadata["thread_id"], subject=doc[0].metadata["subject"], from_=doc[0].metadata["from"], to=doc[0].metadata["to"], body=doc[0].metadata["body"], timestamp=doc[0].metadata["timestamp"])
             retrieved_emails.append(_tmp_mail)
+        
+        # "from" filtered search #TODO
+
+        # "time" filtered search #TODO
+
+        # "time" and "from" filtered search #TODO
 
         # Deduplicate emails (temporary solution)
         unique_emails = []

@@ -75,8 +75,6 @@ def test():
 def main():
     embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL_NAME)
     client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
-    collection = client.get_collection("emails")
-
 
     db = Chroma(
         client=client,
@@ -84,6 +82,36 @@ def main():
         embedding_function=embeddings,
     )
 
+    db_all = db.get(include=["embeddings", "metadatas", "documents"])
+    print(f"Total number of embeddings in db_all: {len(db_all['embeddings'])}")
+    print(f"Total number of metadatas in db_all: {len(db_all['metadatas'])}")
+    print(f"Total number of documents in db_all: {len(db_all['documents'])}")
+
+    unique_embeddings = set(tuple(embedding) for embedding in db_all["embeddings"])
+    unique_metadatas = set(tuple(metadata.items()) for metadata in db_all["metadatas"])
+    unique_documents = set(tuple(document) for document in db_all["documents"])
+    print(f"Number of unique embeddings: {len(unique_embeddings)}")
+    print(f"Number of unique metadatas: {len(unique_metadatas)}")
+    print(f"Number of unique documents: {len(unique_documents)}")
+
+
+    db2 = Chroma(
+        client=client,
+        collection_name="emails2",
+        embedding_function=embeddings,
+    )
+
+    db_all2 = db2.get(include=["embeddings", "metadatas", "documents"])
+    print(f"Total number of embeddings in db_all: {len(db_all2['embeddings'])}")
+    print(f"Total number of metadatas in db_all: {len(db_all2['metadatas'])}")
+    print(f"Total number of documents in db_all: {len(db_all2['documents'])}")
+    
+    unique_embeddings = set(tuple(embedding) for embedding in db_all2["embeddings"])
+    unique_metadatas = set(tuple(metadata.items()) for metadata in db_all2["metadatas"])
+    unique_documents = set(tuple(document) for document in db_all2["documents"])
+    print(f"Number of unique embeddings: {len(unique_embeddings)}")
+    print(f"Number of unique metadatas: {len(unique_metadatas)}")
+    print(f"Number of unique documents: {len(unique_documents)}")
     #db_metadata = db.get()["metadatas"]
     #sender_set = set()
     #recipient_set = set()
@@ -91,12 +119,4 @@ def main():
      #   sender_set.add(metadata["from"])
       #  recipient_set.add(metadata["to"])
 
-
-
-    query = "When do sarah and i want to hold lunch?"
-    docs_res = db.similarity_search_with_relevance_scores(query, k=3)
-    for doc in docs_res:
-        print(doc[0].metadata["body"])
-
-    print(len(docs_res))
 main()

@@ -25,4 +25,5 @@ os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
 KAGGLEHUB_DATASET_NAME = "marawanxmamdouh/email-thread-summary-dataset"
 CHROMA_DB_PATH = "chroma_db"
 
-RETRIEVAL_K = 10
+COLLECTION_NAME = "emails2"
+RETRIEVAL_K = 60

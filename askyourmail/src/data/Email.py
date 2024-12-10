@@ -1,3 +1,7 @@
+import datetime
+from askyourmail.src.util.Constants import *
+
+
 class Email:
     def __init__(self, thread_id, subject, from_, to, body, timestamp):
         """
@@ -11,7 +15,12 @@ class Email:
         """
         self.thread_id = thread_id
         self.subject = subject
-        self.timestamp = timestamp
+        if(COLLECTION_NAME=="emails2"):
+            self.timestamp = int(timestamp)
+            self.date = datetime.datetime.fromtimestamp(self.timestamp).strftime('%Y-%m-%d %H:%M:%S')
+        else:
+            self.timestamp = timestamp
+            self.date = self.timestamp
         self.from_ = from_
         self.to = to
         self.body = body
@@ -31,6 +40,7 @@ class Email:
             "thread_id": str(self.thread_id),
             "subject": self.subject,
             "timestamp": self.timestamp,
+            "date" : self.date,
             "from": self.from_,
             "to": self.to,
             "body": self.body

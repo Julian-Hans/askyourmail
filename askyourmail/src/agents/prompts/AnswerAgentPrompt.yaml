@@ -14,6 +14,7 @@ v1:
         thread_id: {{ email.thread_id }}
         subject: {{ email.subject }}
         timestamp: {{ email.timestamp }}
+        date: {{ email.date }}
         from: {{ email.from }}
         to: {{ email.to }}
         body: {{ email.body }}

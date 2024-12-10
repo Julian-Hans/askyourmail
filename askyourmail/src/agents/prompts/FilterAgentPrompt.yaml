@@ -1,0 +1,26 @@
+
+v1:
+  - type: system
+    prompt: |
+        You are a helpful AI assistant and an expert in email search filter generation.
+  - type: human
+    prompt: |
+        You are given a natural language query. Your task is to extract relevant metadata from the query to generate a filter that can be used to search for emails.
+        Example query 1: "I got an email last week from john@doe.com where he talked about the web frontend project. Can you find it?"
+        Your output: {"from_": "john@doe.com", "time": "last week"}
+        Example query 2: "On may 5th 2000, sarah hauser wanted to schedule a meeting. When exactly is it again?"
+        Your output: {"from_": "sarah hauser", "time": "may 5th 2000"}
+        Example query 3: "I think i got an email in march 2005 where we talked about learning python. Can you help me find it?"
+        Your output: {"from_": None, "time": "march 2005"}
+        Keep names and dates in their exact mention, do not reformat or change them.
+        If you can not determine metadata from the query, leave the corresponding metadata field empty.
+
+        Query: {{query}}
+
+v2:
+  - type: system
+    prompt: |
+        ...
+  - type: human
+    prompt: |
+        ...

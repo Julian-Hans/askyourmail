@@ -54,7 +54,7 @@ class Processor:
                 pd.DataFrame: Loaded dataset as a Pandas DataFrame.
         """
         path = kagglehub.dataset_download(kaggle_dataset_name)
-        log.info("Path to dataset files:", path)
+        log.info(f"Path to dataset files: {path}")
         csv_path = f"{path}/CSV/email_thread_details.csv"
         df = pd.read_csv(csv_path)
         df = df.iloc[:len(df)//2].reset_index(drop=True)
@@ -76,6 +76,7 @@ class Processor:
         # Convert DataFrame rows into Email objects
         emails = []
         for _, row in email_df.iterrows():
+            row['timestamp'] = int(pd.to_datetime(row['timestamp']).timestamp())
             email = Email(
                 thread_id=row['thread_id'], 
                 subject=row['subject'],
@@ -138,12 +139,14 @@ class Processor:
 
 
 if __name__ == "__main__":
-    # processor = Processor()
-    # processor.run_pipline("emails", EMBEDDING_MODEL_NAME, OPENAI_API_BASE, OPENAI_API_KEY)
+    #processor = Processor()
+    #processor.run_pipline(COLLECTION_NAME, EMBEDDING_MODEL_NAME, OPENAI_API_BASE, OPENAI_API_KEY)
 
     client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
-    collection = client.get_collection("emails")
-    
+    collection = client.get_collection(COLLECTION_NAME)
+    collection_old = client.get_collection("emails")
+
+    log.info(collection_old.count())
     log.info(collection.count())
     
     
