@@ -5,7 +5,7 @@ v1:
         You are a helpful AI assistant and an expert in informal conversation.
   - type: human
     prompt: |
-        You are given a natural language query, as well as an email with metadata. Your task is to determine whether the email contains the information/answer that is requested in the query.
+        You are given a natural language query, as well as an email with metadata. Your task is to determine whether the email contains the information/answer that is requested in the query. If the email contains information that is useful towards answering the query, your answer should be TRUE. 
         
         Query: {{query}}
         Email Metadata:

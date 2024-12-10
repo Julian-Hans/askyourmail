@@ -12,7 +12,7 @@ v1:
         Your output: {"from_": "sarah hauser", "time": "may 5th 2000"}
         Example query 3: "I think i got an email in march 2005 where we talked about learning python. Can you help me find it?"
         Your output: {"from_": None, "time": "march 2005"}
-        Keep names and dates in their exact mention, do not reformat or change them.
+        Keep names their exact mention, do not reformat or change them. For dates, use a format including "of" - for example: "may 5 2000" would be "5th of may 2000", "week 3 august 2004" would be "3rd week of august 2004".
         If you can not determine metadata from the query, leave the corresponding metadata field empty.
 
         Query: {{query}}

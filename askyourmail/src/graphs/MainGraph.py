@@ -15,6 +15,7 @@ from langchain_openai import OpenAIEmbeddings
 from askyourmail.src.agents.AnswerAgent.AnswerAgentInput import AnswerAgentInput
 from askyourmail.src.agents.AnswerAgent.AnswerAgentOutput import AnswerAgentOutput
 from askyourmail.src.util.Constants import *
+from askyourmail.src.util.TimedateParser import parse_date_range
 from askyourmail.src.graphs.states.States import AgentState
 from askyourmail.src.agents.AnswerAgent.AnswerAgent import AnswerAgent
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgent import ReflectionAgent
@@ -23,6 +24,7 @@ from askyourmail.src.agents.ReflectionAgent.ReflectionAgentOutput import Reflect
 from askyourmail.src.agents.FilterAgent.FilterAgent import FilterAgent
 from askyourmail.src.agents.FilterAgent.FilterAgentInput import FilterAgentInput
 from askyourmail.src.data.Email import Email
+from askyourmail.src.data.Filter import Filter, FromFilter, TimeFilter
 
 class MainGraph():
     def __init__(self) -> None:
@@ -83,13 +85,28 @@ class MainGraph():
         # get query from state
         query = state["query"]
         filterAgentInput = FilterAgentInput(query)
-        # filter query
+        # extract filters from query
         result = self.filter_agent.invoke(filterAgentInput)
+        
+        generated_filters = []
+        if result.from_:
+            from_filter = FromFilter(from_=result.from_)
+            generated_filters.append(from_filter)
+        if result.time:
+            try: 
+                date_start, date_end = parse_date_range(result.time)
+                start_timestamp = int(date_start.timestamp())
+                end_timestamp = int(date_end.timestamp())
+                time_filter = TimeFilter(time=result.time, start_date=date_start, end_date=date_end, start_timestamp=start_timestamp, end_timestamp=end_timestamp)
+                generated_filters.append(time_filter)
+            except:
+                log.error(f"Could not parse date range: {result.time}. Skipping time filter.")
+                # leave ranges as None
 
         # package collected data back into state
-        state["extractedFrom"] = result.from_
-        state["extractedTime"] = result.time
-
+        state["extractedFilters"] = generated_filters
+        for filter in generated_filters:
+            log.info(f"Filter Agent extracted filter: {filter.to_string()}")
         return state
 
     def _chroma_retrieval_node(self, state: AgentState) -> AgentState:
@@ -103,32 +120,74 @@ class MainGraph():
             embedding_function=embeddings,
         )
 
-        # standard similarity search
-        docs_results = chroma_db.similarity_search_with_relevance_scores(state["query"], k=RETRIEVAL_K)
         retrieved_emails = []
+        retrieved_emails_filter = []
+        retrieved_emails_combined_filter = []
+
+        # standard (unfiltered) similarity search
+        log.info("Running (naive) ChromaDB similarity search.")
+        docs_results = chroma_db.similarity_search_with_relevance_scores(state["query"], k=RETRIEVAL_K_NAIVE)
+
         # create emails from retrieved docs
         for doc in docs_results:
             _tmp_mail = Email(thread_id=doc[0].metadata["thread_id"], subject=doc[0].metadata["subject"], from_=doc[0].metadata["from"], to=doc[0].metadata["to"], body=doc[0].metadata["body"], timestamp=doc[0].metadata["timestamp"])
             retrieved_emails.append(_tmp_mail)
         
-        # "from" filtered search #TODO
+        # use individual filters to search
+        for filter in state["extractedFilters"]:
+            log.info(f"Running filtered ChromaDB similarity search with filter: {filter.to_string()}")
+            docs_results_with_filter = chroma_db.similarity_search_with_relevance_scores(state["query"], k=RETRIEVAL_K_PER_FILTER, filter=filter.to_chroma_filter())
+            for doc in docs_results_with_filter:
+                _tmp_mail = Email(thread_id=doc[0].metadata["thread_id"], subject=doc[0].metadata["subject"], from_=doc[0].metadata["from"], to=doc[0].metadata["to"], body=doc[0].metadata["body"], timestamp=doc[0].metadata["timestamp"])
+                retrieved_emails_filter.append(_tmp_mail)
+        
+        # combine all filters to a single precise one
+        combined_filter = Filter() # init empty filter
+        for index, filter in enumerate(state["extractedFilters"]):
+            if index == 0:
+                combined_filter.chroma_filter = filter.to_chroma_filter()
+            else:
+                combined_filter.chroma_filter = combined_filter.combine_and(combined_filter.chroma_filter, filter.to_chroma_filter())
 
-        # "time" filtered search #TODO
+        # run combined filter search 
+        log.info("Running (naive) ChromaDB similarity search.")
+        combined_filter_docs_results = chroma_db.similarity_search_with_relevance_scores(state["query"], k=RETRIEVAL_K_NAIVE, filter=combined_filter.to_chroma_filter())
+        # create emails from retrieved docs
+        for doc in combined_filter_docs_results:
+            _tmp_mail = Email(thread_id=doc[0].metadata["thread_id"], subject=doc[0].metadata["subject"], from_=doc[0].metadata["from"], to=doc[0].metadata["to"], body=doc[0].metadata["body"], timestamp=doc[0].metadata["timestamp"])
+            retrieved_emails_combined_filter.append(_tmp_mail)
 
-        # "time" and "from" filtered search #TODO
+        all_retrieved_emails = retrieved_emails + retrieved_emails_filter + retrieved_emails_combined_filter
+        # Compute overlaps between the three retrieved email lists
+        naive_set = set((email.thread_id, email.subject, email.from_, email.to, email.body, email.timestamp) for email in retrieved_emails)
+        filter_set = set((email.thread_id, email.subject, email.from_, email.to, email.body, email.timestamp) for email in retrieved_emails_filter)
+        combined_filter_set = set((email.thread_id, email.subject, email.from_, email.to, email.body, email.timestamp) for email in retrieved_emails_combined_filter)
 
+        overlap_naive_filter = naive_set & filter_set
+        overlap_naive_combined = naive_set & combined_filter_set
+        overlap_filter_combined = filter_set & combined_filter_set
+
+        log.info(f"Overlap between naive and filter search: {len(overlap_naive_filter)} emails.")
+        log.info(f"Overlap between naive and combined filter search: {len(overlap_naive_combined)} emails.")
+        log.info(f"Overlap between filter and combined filter search: {len(overlap_filter_combined)} emails.")
+        
         # Deduplicate emails (temporary solution)
         unique_emails = []
         seen = set()
-        for email in retrieved_emails:
+        for email in all_retrieved_emails:
             email_tuple = (email.thread_id, email.subject, email.from_, email.to, email.body, email.timestamp)
             if email_tuple not in seen:
                 seen.add(email_tuple)
                 unique_emails.append(email)
-        retrieved_emails = unique_emails
+        final_retrieved_emails = unique_emails
 
         # package emails back into state
-        state["retrievedEmails"] = retrieved_emails
+        state["retrievedEmails"] = final_retrieved_emails
+        log.info(f"ChromaDB retrieved (naive) {len(retrieved_emails)} emails.")
+        log.info(f"ChromaDB retrieved (individual filter) {len(retrieved_emails_filter)} emails.")
+        log.info(f"ChromaDB retrieved (combined filter) {len(retrieved_emails_combined_filter)} emails.")
+        log.info(f"ChromaDB retrieved a total of: {len(all_retrieved_emails)} emails.")
+        log.info(f"ChromaDB retrieved a total of: {len(final_retrieved_emails)} unique emails.")
         return state
 
     def _reflection_node(self, state: AgentState) -> AgentState:

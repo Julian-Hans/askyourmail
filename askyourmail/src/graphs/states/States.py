@@ -5,11 +5,11 @@ from typing import List
 
 # Internal imports
 from askyourmail.src.data.Email import Email
+from askyourmail.src.data.Filter import Filter
 
 class AgentState(TypedDict):
     query: str
-    extractedFrom: str
-    extractedTime: str
+    extractedFilters: List[Filter]
     retrievedEmails: List[Email]
     relevantEmails: List[Email]
     answer: str
