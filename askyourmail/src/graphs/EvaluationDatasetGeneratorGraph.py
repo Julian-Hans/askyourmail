@@ -97,6 +97,7 @@ class EvaluationDatasetGeneratorGraph():
                     email=input[i].email,
                     eval_gen_agent_output=res,
                 )
+                evaluation_pairs.append(_tmp_eval_pair)
 
         state["evaluationPairs"] = evaluation_pairs
         log.info(f"Evaluation Agent generated {len(evaluation_pairs)} valid evaluation pairs from {len(input)} retrieved mails.")

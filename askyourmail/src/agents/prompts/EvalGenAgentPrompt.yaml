@@ -6,10 +6,10 @@ v1:
   - type: human
     prompt: |
         You are given an Email body and its metadata. Your task is to generate 3 natural language questions or queries that can be answered using only the information in the email. The questions should be concise, 2 sentences at max and should not be directly answerable by the metadata.
-        The query field should be filled with the question or query that is only answerable with the information from the email body.
-        The context_query_from field should ontain the initial generated query, but include some search context regarding the sender of the email.
-        The context_query_date field should contain the inital generated query, but include some search context regarding the timeframe the email was received in.
-        The context_query_combined field should contain the initial generated query, but include some search context regarding the sender of the email and the timeframe the email was received in.
+        The query field should be filled with the question or query that is only answerable with the information from the email body. Try to be as specific with the question, including entity names or conversation topics mentioned in the email.
+        The context_query_from field should ontain the initial generated query, but include some search context regarding the sender of the email. Specifically mention who sent the email. Do not include information regarding the timeframe the email was received in this query.
+        The context_query_date field should contain the inital generated query, but include search context regarding the timeframe the email was received in. Try to mimick human query formulation by specifying the year, or month and year the email was received, not the exact date. Do not include information about who sent this email in this query.
+        The context_query_combined field should contain the initial generated query, but include some search context regarding the sender of the email and the timeframe the email was received in. Try to mimick human query formulation by specifying the year, or month and year the email was received, not the exact date.
         The answer field should contain the single answer to the queries.
         The specificness field should contain a value from 0 to 2, indicating how specific the question is in regards to the email. 0 being the least specific (most likely answerable with other emails too) and 2 being the most specific (requiring this exact email).
         The valid_flag field should contain a boolean value indicating if the query is valid and answerable with the email body. Set it to false if the email does not contain any information that can be used to create a query.

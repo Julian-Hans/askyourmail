@@ -1,5 +1,5 @@
 
-from langchain_core.pydantic_v1 import BaseModel, Field
+from pydantic import BaseModel, Field
 
 class ReflectionAgentOutput(BaseModel):
     """The output object for the ReflectionAgent.
