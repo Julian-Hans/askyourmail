@@ -1,8 +1,6 @@
 __pycache__
 *.pyc
-poetry.lock
 .build
 .env
-chroma_db
 .DS_Store
 .gradio

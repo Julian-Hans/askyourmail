@@ -1,6 +1,5 @@
 
 # external imports
-import logging
 from langchain_openai import ChatOpenAI
 from langgraph.graph import END, StateGraph
 from langgraph.graph.graph import CompiledGraph
@@ -9,6 +8,7 @@ from typing import List
 from langchain_chroma.vectorstores import Chroma
 import chromadb
 from langchain_openai import OpenAIEmbeddings
+import time
 
 
 # local imports
@@ -86,7 +86,21 @@ class EvaluationDatasetGeneratorGraph():
         for email in state["retrievedEmails"]:
             input.append(EvalGenAgentInput(email))
         
-        results: List[EvalGenAgentOutput] = self.eval_gen_agent.batch(input)
+        results = []
+        # got rate limited, so chunk the requests if necessary
+        if len(input) > 100:
+            chunks = []
+            for i in range(0, len(input), 100):
+                chunk = input[i:i + 100]
+                chunks.append(chunk)
+
+            for chunk in chunks:
+                log.info(f"Processing chunk of {len(chunk)} emails")
+                results.extend(self.eval_gen_agent.batch(chunk))
+                log.info(f"Sleeping for 60 seconds to avoid rate limit")
+                time.sleep(60)
+        else:
+            results: List[EvalGenAgentOutput] = self.eval_gen_agent.batch(input)
 
         # package result back into the state
         evaluation_pairs: List[EvaluationPair] = []
