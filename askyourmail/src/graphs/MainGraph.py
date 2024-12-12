@@ -1,6 +1,5 @@
 
 # external imports
-import logging
 from langchain_openai import ChatOpenAI
 from langgraph.graph import END, StateGraph
 from langgraph.graph.graph import CompiledGraph
@@ -13,14 +12,12 @@ from langchain_openai import OpenAIEmbeddings
 
 # local imports
 from askyourmail.src.agents.AnswerAgent.AnswerAgentInput import AnswerAgentInput
-from askyourmail.src.agents.AnswerAgent.AnswerAgentOutput import AnswerAgentOutput
 from askyourmail.src.util.Constants import *
 from askyourmail.src.util.TimedateParser import parse_date_range
 from askyourmail.src.graphs.states.States import AgentState
 from askyourmail.src.agents.AnswerAgent.AnswerAgent import AnswerAgent
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgent import ReflectionAgent
 from askyourmail.src.agents.ReflectionAgent.ReflectionAgentInput import ReflectionAgentInput
-from askyourmail.src.agents.ReflectionAgent.ReflectionAgentOutput import ReflectionAgentOutput
 from askyourmail.src.agents.FilterAgent.FilterAgent import FilterAgent
 from askyourmail.src.agents.FilterAgent.FilterAgentInput import FilterAgentInput
 from askyourmail.src.data.Email import Email
@@ -35,6 +32,7 @@ class MainGraph():
         self.graph = self._compile_graph()
 
     def _compile_graph(self) -> CompiledGraph:
+        log.info("Compiling MainGraph")
         workflow = StateGraph(AgentState)
 
         workflow.add_node("filter", self._filter_node)
@@ -47,34 +45,6 @@ class MainGraph():
         workflow.add_edge("reflection", "answer_")
         workflow.add_edge("answer_", END)
 
-        #workflow.add_node("filter_extraction", self._filter_extraction_node)
-
-        #workflow.add_edge("chroma_retrieval", "reflection")
-
-        """workflow.add_conditional_edges(
-            "reflection",
-            self._reflection_router,
-            {
-                "__continue__" : "filter_extraction",
-                "__end__" : END
-            }
-        )"""
-        #workflow.add_edge("filter_extraction", "chroma_retrieval")
-        #workflow.add_edge("chroma_retrieval", "reflection")
-
-        #workflow.add_node("Answer", self._assistant_node)
-
-       #workflow.add_edge("assistant", "assistant_reflector")
-
-        #workflow.add_conditional_edges(
-        #    "assistant_reflector",
-        #    self._assistant_reflector_router,
-        #    {
-        #        "__continue__" : "assistant",
-        #        "__end__" : END
-        #    }
-        #)
-
         workflow.set_entry_point("filter")
         return workflow.compile()
     
@@ -82,12 +52,13 @@ class MainGraph():
         return "__end__"
     
     def _filter_node(self, state: AgentState) -> AgentState:
+        log.info("Running Filter node")
         # get query from state
         query = state["query"]
         filterAgentInput = FilterAgentInput(query)
         # extract filters from query
         result = self.filter_agent.invoke(filterAgentInput)
-        
+        log.info(f"Filter Agent output: {result.time}")
         generated_filters = []
         if result.from_:
             from_filter = FromFilter(from_=result.from_)
@@ -110,6 +81,7 @@ class MainGraph():
         return state
 
     def _chroma_retrieval_node(self, state: AgentState) -> AgentState:
+        log.info("Running ChromaDB retrieval node")
         # get emails from chroma (similarity search with scores and top k)
         embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL_NAME)
         client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
@@ -142,20 +114,22 @@ class MainGraph():
                 retrieved_emails_filter.append(_tmp_mail)
         
         # combine all filters to a single precise one
-        combined_filter = Filter() # init empty filter
-        for index, filter in enumerate(state["extractedFilters"]):
-            if index == 0:
-                combined_filter.chroma_filter = filter.to_chroma_filter()
-            else:
-                combined_filter.chroma_filter = combined_filter.combine_and(combined_filter.chroma_filter, filter.to_chroma_filter())
+        log.info(f"Number of filters: {len(state['extractedFilters'])}")
+        if len(state["extractedFilters"]) > 1:
+            combined_filter = Filter() # init empty filter
+            for index, filter in enumerate(state["extractedFilters"]):
+                if index == 0:
+                    combined_filter.chroma_filter = filter.to_chroma_filter()
+                else:
+                    combined_filter.chroma_filter = combined_filter.combine_and(combined_filter.chroma_filter, filter.to_chroma_filter())
 
-        # run combined filter search 
-        log.info("Running (naive) ChromaDB similarity search.")
-        combined_filter_docs_results = chroma_db.similarity_search_with_relevance_scores(state["query"], k=RETRIEVAL_K_NAIVE, filter=combined_filter.to_chroma_filter())
-        # create emails from retrieved docs
-        for doc in combined_filter_docs_results:
-            _tmp_mail = Email(thread_id=doc[0].metadata["thread_id"], subject=doc[0].metadata["subject"], from_=doc[0].metadata["from"], to=doc[0].metadata["to"], body=doc[0].metadata["body"], timestamp=doc[0].metadata["timestamp"])
-            retrieved_emails_combined_filter.append(_tmp_mail)
+            # run combined filter search 
+            log.info(f"Running (combined filter) ChromaDB similarity search with filter: {combined_filter.to_string()}")
+            combined_filter_docs_results = chroma_db.similarity_search_with_relevance_scores(state["query"], k=RETRIEVAL_K_NAIVE, filter=combined_filter.to_chroma_filter())
+            # create emails from retrieved docs
+            for doc in combined_filter_docs_results:
+                _tmp_mail = Email(thread_id=doc[0].metadata["thread_id"], subject=doc[0].metadata["subject"], from_=doc[0].metadata["from"], to=doc[0].metadata["to"], body=doc[0].metadata["body"], timestamp=doc[0].metadata["timestamp"])
+                retrieved_emails_combined_filter.append(_tmp_mail)
 
         all_retrieved_emails = retrieved_emails + retrieved_emails_filter + retrieved_emails_combined_filter
         # Compute overlaps between the three retrieved email lists
@@ -217,22 +191,15 @@ class MainGraph():
 
         # package result back into the state
         state["answer"] = result.result # TODO: bad naming
+        state["usedSources"] = result.used_sources
         
         log.info(f"AnswerAgent generated answer: {result.result}")
+        log.info(f"AnswerAgent used sources: {result.used_sources}")
         return state
 
-
-    def _assistant_node(self, state: AgentState) -> AgentState:
-        input: AssistantAgentInput = state["assistantAgentInput"]
-
-        # invoke agent
-        result = self.assistant_agent.invoke(input) 
-        # package results back into state
-        state["assistantAgentOutput"] = result
-
-        return state
     
     def run(self, state: AgentState) -> AgentState:
+        log.info("Running MainGraph")
         events = self.graph.stream(state, {"recursion_limit": 25}, stream_mode="values")
         final_state = None  # Initialize a variable to hold the final state
 

@@ -16,6 +16,9 @@ class Filter:
     def to_chroma_filter(self):
         return self.chroma_filter
 
+    def to_string(self):
+        return f"Filter: {self.chroma_filter}"  
+
 
 class TimeFilter(Filter):
     def __init__(self, time=None, start_date=None, end_date=None, start_timestamp=None, end_timestamp=None):

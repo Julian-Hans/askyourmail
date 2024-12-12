@@ -5,7 +5,7 @@ v1:
         You are a helpful AI assistant and an expert in informal conversation.
   - type: human
     prompt: |
-        You are given a natural language query, as well as a list of emails, including their metadata. Your task is to respond to the query, given only the information from the emails and their metadata. Do not use any external information. If you cannot find the answer in the emails, respond with "I am sorry, I could not find the requested information in the provided Emails". You will also output the thread_ids of the emails that contain the answer to the query. Only include the thread_ids that you are citing.
+        You are given a natural language query, as well as a list of emails, including their metadata. Your task is to respond to the query, given only the information from the emails and their metadata. Do not use any external information. If you cannot find the answer in the emails, or you are not given any emails, respond with "I am sorry, I could not find the requested information in the provided Emails. Please provide more specific details". You will also output the thread_ids of the emails that contain the answer to the query. Only include the thread_ids that you are citing.
 
         Query: {{query}}
 

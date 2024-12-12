@@ -2,6 +2,7 @@
 import os
 import logging as log
 from dotenv import load_dotenv
+from datetime import datetime
 
 LOGGING_LEVEL = log.INFO
 
@@ -26,6 +27,11 @@ KAGGLEHUB_DATASET_NAME = "marawanxmamdouh/email-thread-summary-dataset"
 CHROMA_DB_PATH = "chroma_db"
 
 COLLECTION_NAME = "emails2"
-RETRIEVAL_K_NAIVE = 10
+RETRIEVAL_K_NAIVE = 50
 RETRIEVAL_K_PER_FILTER = 10
 RETRIEVAL_K_COMBINED_FILTERS = 10
+
+# evaluation graph only
+EVAL_GEN_BATCH_SIZE = 10
+current_date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+EVAL_GEN_DATASET_PATH = f"/evaluation/eval_gen_dataset_{current_date}_k_{EVAL_GEN_BATCH_SIZE}.json"

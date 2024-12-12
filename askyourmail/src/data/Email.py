@@ -17,7 +17,7 @@ class Email:
         self.subject = subject
         if(COLLECTION_NAME=="emails2"):
             self.timestamp = int(timestamp)
-            self.date = datetime.datetime.fromtimestamp(self.timestamp).strftime('%Y-%m-%d %H:%M:%S')
+            self.date = datetime.fromtimestamp(self.timestamp).strftime('%Y-%m-%d %H:%M:%S')
         else:
             self.timestamp = timestamp
             self.date = self.timestamp
@@ -45,3 +45,31 @@ class Email:
             "to": self.to,
             "body": self.body
         }
+    
+    @classmethod
+    def from_dict(cls, data):
+        """
+        Create an Email instance from a dictionary.
+        :param data: Dictionary containing email data.
+        :return: Email instance.
+        """
+        return cls(
+            thread_id=data.get("thread_id"),
+            subject=data.get("subject"),
+            from_=data.get("from"),
+            to=data.get("to"),
+            body=data.get("body"),
+            timestamp=data.get("timestamp")
+        )
+
+    def to_string(self):
+        """
+        Convert the Email instance to a string representation.
+        """
+        return (f"Thread ID: {self.thread_id}\n"
+                f"Subject: {self.subject}\n"
+                f"Timestamp: {self.timestamp}\n"
+                f"Date: {self.date}\n"
+                f"From: {self.from_}\n"
+                f"To: {self.to}\n"
+                f"Body: {self.body}")

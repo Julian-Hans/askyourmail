@@ -1,0 +1,71 @@
+
+v1:
+  - type: system
+    prompt: |
+        You are a helpful AI assistant and an expert in informal conversation, specializing in creating evaluation data for NLP tasks.
+  - type: human
+    prompt: |
+        You are given an Email body and its metadata. Your task is to generate 3 natural language questions or queries that can be answered using only the information in the email. The questions should be concise, 2 sentences at max and should not be directly answerable by the metadata.
+        The query field should be filled with the question or query that is only answerable with the information from the email body.
+        The context_query_from field should ontain the initial generated query, but include some search context regarding the sender of the email.
+        The context_query_date field should contain the inital generated query, but include some search context regarding the timeframe the email was received in.
+        The context_query_combined field should contain the initial generated query, but include some search context regarding the sender of the email and the timeframe the email was received in.
+        The answer field should contain the single answer to the queries.
+        The specificness field should contain a value from 0 to 2, indicating how specific the question is in regards to the email. 0 being the least specific (most likely answerable with other emails too) and 2 being the most specific (requiring this exact email).
+        The valid_flag field should contain a boolean value indicating if the query is valid and answerable with the email body. Set it to false if the email does not contain any information that can be used to create a query.
+
+        Here is an example:
+        thread_id: 2
+        subject: Credit Group Lunch
+        timestamp: 2000-04-18 08:25:00
+        date: 2000-04-18 08:25:00
+        timestamp: 956060700
+        from: Mark Taylor
+        to ['Suzanne Adams']
+        body: I will not be able to attend.
+              Suzanne Adams
+              04/18/2000 12:05 PM
+              to Carol St Clair/HOU/ECT@ECT, Mark Taylor/HOU/ECT@ECT, Sara 
+              Shackleton/HOU/ECT@ECT
+              cc 
+              Subject Credit Group Lunch
+
+              A lunch meeting has been scheduled for Friday, May 5, 2000, from 12:00 p.m. 
+              until 1:30 p.m. in 30C2 to go through in detail how the ISDA and CSA Masters 
+              and Schedules work.
+
+              Please reply as soon as possible if you are going to attend this lunch 
+              meeting (for catering purposes).  Thanks.
+
+
+        Your response could be as follows:
+        query: I have a lunch meeting regarding the ISDA and CSA. When is it happening?
+        context_query_from: I received an invitation from Mark Taylor for a lunch meeting regarding the ISDA and CSA. When is it happening?
+        context_query_date: I received an invitation in April 2000 for a lunch meeting regarding the ISDA and CSA. When is it happening?
+        context_query_combined: I received an invitation from Mark Taylor in April 2000 for a lunch meeting regarding the ISDA and CSA. When is it happening?
+        answer: The lunch meeting is scheduled for Friday, May 5, 2000, from 12:00 p.m. until 1:30 p.m.
+        specificness: 2
+        valid_flag: True
+
+
+        If you are unable to generate a valid query, fill all fields with "unfit" and set specificness to -1 as well as valid_flag to FALSE.
+        The generated queries will be used to evaluate the performance of a Retrieval augmented generation model that has access an email database.
+
+        Now, please provide the queries for the following email:
+
+        Email Metadata:
+        thread_id: {{ thread_id }}
+        subject: {{ subject }}
+        timestamp: {{ timestamp }}
+        date: {{ date }}
+        from: {{ from }}
+        to: {{ to }}
+        body: {{ body }}
+
+v2:
+  - type: system
+    prompt: |
+        ...
+  - type: human
+    prompt: |
+        ...

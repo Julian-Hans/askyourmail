@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
 # Retain the main function
-def main(state: AgentState) -> None:
+def main(state: AgentState) -> AgentState:
     log.info("Starting main")
     main_graph = MainGraph()
     final_state = main_graph.run(state)
@@ -23,29 +23,30 @@ def main(state: AgentState) -> None:
     log.info("-------")
     log.info(f"Query: {final_state['query']}")
     log.info(f"Answer: {final_state['answer']}")
+    return final_state
 
 # Chatbot main logic
 def process_query(query: str) -> str:
-    state: AgentState = {"query": query}
-    main_graph = MainGraph()
-    final_state = main_graph.run(state)
+    log.info("Processing query...")
+    state: AgentState = {
+        "query": query,
+    }
 
-    # Prepare a readable response
-    retrieved_emails = [
-        f"Mail ID: {email.thread_id}, Content: {email.content}"
-        for email in final_state.get("retrievedEmails", [])
-    ]
-    relevant_emails = [
-        f"Mail ID: {email.thread_id}, Content: {email.content}"
-        for email in final_state.get("relevantEmails", [])
-    ]
-    query_answer = final_state.get("answer", "No answer found.")
+    final_state = main(state)
+    
+    relevant_emails = final_state["relevantEmails"]
+    answer = final_state["answer"]
+    used_sources = final_state["usedSources"]
+    query = final_state["query"]
 
+    relevant_emails_filtered_by_used_sources = [email for email in relevant_emails if int(email.thread_id) in used_sources]
+    relevant_emails_str = "\n-----------------\n".join(email.to_string() for email in relevant_emails_filtered_by_used_sources)
+    
     response = (
         f"Query: {query}\n\n"
-        f"Answer: {query_answer}\n\n"
-        f"Retrieved Emails:\n" + "\n".join(retrieved_emails) + "\n\n"
-        f"Relevant Emails:\n" + "\n".join(relevant_emails)
+        f"Answer: {answer}\n\n"
+        f"Relevant Email IDs:\n" + "\n".join(map(str, used_sources)) + "\n\n"
+        f"Relevant Emails:\n==================\n{relevant_emails_str}\n=================="
     )
 
     return response
@@ -62,3 +63,4 @@ app = gr.Interface(
 if __name__ == "__main__":
     log.info("Launching Gradio Interface...")
     app.launch()
+    

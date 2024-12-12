@@ -5,3 +5,4 @@ poetry.lock
 .env
 chroma_db
 .DS_Store
+.gradio
