@@ -7,9 +7,13 @@ This project uses Poetry (version 1.8.4) for virtual environment and dependency 
 
 ```pip install poetry```
 
-Copy the `.env.example`file and rename it to `.env`, populating the required keys. You can use langsmith to track your experiments, but that is optional.
+Copy the `.env.example`file and rename it to `.env`, populating the required keys (`OPENAI_API_KEY`). You can use langsmith to track your experiments, but that is optional.
 
 Make sure that the chroma_db directory contains a chroma database with a valid collection. If there is none (or you want to generate your own, see section Populating chroma_db.)
+
+Since git-lfs is not free, we decided to host the `chroma.sqlite3` instance of our experiments [here](https://we.tl/t-iwYuvSbgcZ). Move it into `chroma_db`, the other required files are prepopulated.
+
+If the link is down (or any other technical problems arise), feel free to email me at julian.hans@student.uni-luebeck.de and I will be happy to assist!
 
 ## Quickstart:
 After making sure you meet all requirements, run the interactive interface using 
@@ -29,5 +33,6 @@ In askyourmail/src you will find 3 python files serving different purposes.
 As with `TOTAL_RETRIEVAL_K` = 32 one query averages around 16000 tokens per request, and 1m token cost 0.15 USD. This means that for
 - `TOTAL_RETRIEVAL_K` = 32  -> 0.0022 USD per query (yielding 84% accuracy, assuming the user provides good context)
 - `TOTAL_RETRIEVAL_K` = 160 -> 0.01   USD per query (yielding 94% accuracy, assuming the user provides good context)
+
 Our evaluation with a generated dataset of 600 elements and k = 32 cost a total of 1.75$.
-For more details, see `eval_log_*.txt`!
+For more details, see `eval_log_*.txt`! (Metrics are at the bottom!)
