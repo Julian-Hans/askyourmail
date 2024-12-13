@@ -1,6 +1,8 @@
 # ASKYOURMAIL
 A conversational interface for retrieving emails and answering natural language queries based on them.
-It uses Langchain, Chroma and OpenAIs gpt4-o-mini as well as text-embedding-3-small.
+It uses [Langchain](https://python.langchain.com/docs/introduction/), [Chroma](https://www.trychroma.com) and ][OpenAIs](https://platform.openai.com/docs/models/gp) gpt4-o-mini as well as text-embedding-3-small.
+
+The dataset for our Evaluation is the [Email Thread Summary Dataset](https://www.kaggle.com/datasets/marawanxmamdouh/email-thread-summary-dataset) by Marawan Mamdouh.
 
 ## Prerequisites
 This project uses Poetry (version 1.8.4) for virtual environment and dependency management, as well as Python (version 3.11.7). Make sure you have python and pip installed and (if not present) install poetry using 
@@ -20,8 +22,10 @@ Install the poetry project by running:
 and continue to quickstart.
 
 ## Quickstart:
-After making sure you meet all requirements, run the interactive interface using 
-```poetry run python /askyourmail/src/main.py```
+After making sure you meet all requirements, from the root directory of the project run the interactive interface using 
+```poetry run python askyourmail/src/main.py```
+
+You can now access the application at [localhost:7860](localhost:7860).
 
 ## Populating chroma_db:
 With `askyourmail/src/data/Processor.py` you can generate a new collection for the chroma database. You can change the dataset from `askyourmail/src/util/constants.py`, but will have to parse email dataset that differ from our format beforehand. 
