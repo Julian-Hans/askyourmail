@@ -139,8 +139,8 @@ class Processor:
 
 
 if __name__ == "__main__":
-    #processor = Processor()
-    #processor.run_pipline(COLLECTION_NAME, EMBEDDING_MODEL_NAME, OPENAI_API_BASE, OPENAI_API_KEY)
+    processor = Processor()
+    processor.run_pipline(COLLECTION_NAME, EMBEDDING_MODEL_NAME, OPENAI_API_BASE, OPENAI_API_KEY)
 
     client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
     collection = client.get_collection(COLLECTION_NAME)

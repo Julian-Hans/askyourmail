@@ -1,0 +1,22 @@
+[
+    {
+        "email": {
+            "thread_id": "1303",
+            "subject": "FW: SoCal Needles \"Window\" allocation",
+            "timestamp": 995900970,
+            "date": "2001-07-23 11:09:30",
+            "from": "Watson, Kimberly KWATSON",
+            "to": "['Lokay', 'Michelle Mlokay']",
+            "body": "Michelle, please respond to Ava if you would like to attend.  Thanks, Kim.\n\n -----Original Message-----\nFrom: \tGarcia, Ava  \nSent:\tMonday, July 23, 2001 4:20 PM\nTo:\tHass, Glen; Watson, Kimberly; Donoho, Lindy; Lohman, TK; January, Steven; Schoolcraft, Darrell; Holmes, Bradley; Pavlou, Maria; Williams, Jo; Harris, Steven\nCc:\tCorman, Shelley; Winters, Ricki; Blair, Lynn\nSubject:\tFW: SoCal Needles \"Window\" allocation\n\nSoCal Needles Allocation meeting is scheduled for Wednesday, July 25 at 12noon-1:30p.m. in conference room EB4102.  Lunch will be provided for those in Houston office, please let me know if you will be attending.\n\nThanks,\nAva-35842\n\n -----Original Message-----\nFrom: \tBlair, Lynn  \nSent:\tFriday, July 20, 2001 5:24 PM\nTo:\tHass, Glen; Williams, Jo; Watson, Kimberly; Donoho, Lindy; Lohman, TK; January, Steven; Schoolcraft, Darrell; Holmes, Bradley; Harris, Steven\nCc:\tBlair, Lynn; Corman, Shelley; Garcia, Ava\nSubject:\tSoCal Needles \"Window\" allocation\n\n\t\n\tI would like to have a meeting to review pros and cons in relation to the\n\tprocedure Transwestern is using today for the SoCal Needles \"window\" allocation.\n\n\tSome of the questions being asked:\n\n\t1.  Why are we allocating for SoCal, (at their request)?\n\n\t2.  Why are we allowing SoCal to set the capacity lower than TW's primary firm?\n\n\t3.  What are the options for TW to change the alloction procedure at Needles?\n\n\tI am sure there is a host of other questions we could answer as well.  We are looking\n\tat Tuesday, July 24, at 9:00 a.m or Wednesday, July 25, 1:30 p.m.\n\n\tPlease let Ava Garcia (713-853-5842) know which day is better for you.  Then we will\n\tget a room and let everyone know date and time.  \n\n\tThanks. Lynn"
+        },
+        "eval_gen_agent_output": {
+            "query": "What is the date and time for the SoCal Needles allocation meeting?",
+            "context_query_from": "Michelle, can you tell me the date and time for the SoCal Needles allocation meeting mentioned by Kimberly Watson?",
+            "context_query_date": "Could you inform me about the date and time of the SoCal Needles allocation meeting scheduled for July 2001?",
+            "context_query_combined": "Michelle, can you tell me the date and time for the SoCal Needles allocation meeting mentioned by Kimberly Watson, which is scheduled for July 2001?",
+            "answer": "The SoCal Needles allocation meeting is scheduled for Wednesday, July 25 at 12 noon-1:30 p.m.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    }
+]

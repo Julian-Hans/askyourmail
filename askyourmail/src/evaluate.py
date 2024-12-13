@@ -1,5 +1,6 @@
 import logging
 import json
+import time
 from typing import List
 
 from askyourmail.src.main import main
@@ -7,6 +8,7 @@ from askyourmail.src.data.EvaluationPair import EvaluationPair
 from askyourmail.src.util.Evaluator import Evaluator
 from askyourmail.src.util.Constants import *
 import pickle
+log.info(OPENAI_API_KEY)
 
 def evaluate_combined(checkpoint:bool = False):
     # load list of evaluation pairs
@@ -42,6 +44,8 @@ def evaluate_combined(checkpoint:bool = False):
         log.info(f"Evaluating combined context {index + 1}/{len(evaluation_dataset)}")
         evaluator_context_combined = Evaluator(query=eval_pair.eval_gen_agent_output.context_query_combined, evaluation_pair=eval_pair)
         evaluator_context_combined.evaluate()
+        if(TOTAL_RETRIEVAL_K > 50):
+            time.sleep(30) # avoid timeout because of openai rate limits
         evaluations_context_combined.append(evaluator_context_combined)
         if index % 10 == 0:
             path = EVAL_RESULT_CHECKPOINT_PATH_CONTEXT_COMBINED + f"{index}_of_{len(evaluation_dataset)}.pickle"
@@ -51,6 +55,8 @@ def evaluate_combined(checkpoint:bool = False):
             
     
     context_combined_accuracy = sum([1 for el in evaluations_context_combined if el.ground_truth_in_answer])/len(evaluations_context_combined)
+    proportion_of_groundtruth_in_retrieved_but_not_in_relevant = sum([1 for el in evaluations_context_combined if (el.ground_truth_in_retrieved_emails and el.ground_truth_in_relevant_emails == False) ])/len(evaluations_context_combined)
+    proportion_of_groundtruth_in_relevant_but_not_in_answer = sum([1 for el in evaluations_context_combined if (el.ground_truth_in_relevant_emails and el.ground_truth_in_answer == False) ])/len(evaluations_context_combined)
 
 
     for index, eval_pair in enumerate(evaluation_dataset):
@@ -76,7 +82,8 @@ def evaluate_combined(checkpoint:bool = False):
     ==Evaluation results==:
 
     Context combined accuracy: {context_combined_accuracy} ({sum([1 for el in evaluations_context_combined if el.ground_truth_in_answer])}/{len(evaluations_context_combined)})
-
+    Proportion of ground truth in retrieved but not in relevant: {proportion_of_groundtruth_in_retrieved_but_not_in_relevant} ({sum([1 for el in evaluations_context_combined if (el.ground_truth_in_retrieved_emails and not el.ground_truth_in_relevant_emails) ])} / {len(evaluations_context_combined)})
+    Proportion of ground truth in relevant but not in answer: {proportion_of_groundtruth_in_relevant_but_not_in_answer} ({sum([1 for el in evaluations_context_combined if (el.ground_truth_in_relevant_emails and not el.ground_truth_in_answer) ])} / {len(evaluations_context_combined)})
     """
 
     print(results)
@@ -129,10 +136,25 @@ def evaluate_all():
         evaluations_context_combined.append(evaluator_context_combined)
 
     # calculate final accuracies
-    base_accuracy = sum([1 for el in evaluations_base if el.ground_truth_in_answer])/len(evaluations_base)
-    context_from_accuracy = sum([1 for el in evaluations_context_from if el.ground_truth_in_answer])/len(evaluations_context_from)
-    context_date_accuracy = sum([1 for el in evaluations_context_date if el.ground_truth_in_answer])/len(evaluations_context_date)
     context_combined_accuracy = sum([1 for el in evaluations_context_combined if el.ground_truth_in_answer])/len(evaluations_context_combined)
+    proportion_of_groundtruth_in_retrieved_but_not_in_relevant_combined = sum([1 for el in evaluations_context_combined if (el.ground_truth_in_retrieved_emails and el.ground_truth_in_relevant_emails == False) ])/len(evaluations_context_combined)
+    proportion_of_groundtruth_in_relevant_but_not_in_answer_combined = sum([1 for el in evaluations_context_combined if (el.ground_truth_in_relevant_emails and el.ground_truth_in_answer == False) ])/len(evaluations_context_combined)
+
+    # Calculate accuracies and proportions for `evaluations_base`
+    base_accuracy = sum([1 for el in evaluations_base if el.ground_truth_in_answer]) / len(evaluations_base)
+    proportion_of_groundtruth_in_retrieved_but_not_in_relevant_base = sum([1 for el in evaluations_base if (el.ground_truth_in_retrieved_emails and not el.ground_truth_in_relevant_emails)]) / len(evaluations_base)
+    proportion_of_groundtruth_in_relevant_but_not_in_answer_base = sum([1 for el in evaluations_base if (el.ground_truth_in_relevant_emails and not el.ground_truth_in_answer)]) / len(evaluations_base)
+
+    # Calculate accuracies and proportions for `evaluations_context_from`
+    context_from_accuracy = sum([1 for el in evaluations_context_from if el.ground_truth_in_answer]) / len(evaluations_context_from)
+    proportion_of_groundtruth_in_retrieved_but_not_in_relevant_from = sum([1 for el in evaluations_context_from if (el.ground_truth_in_retrieved_emails and not el.ground_truth_in_relevant_emails)]) / len(evaluations_context_from)
+    proportion_of_groundtruth_in_relevant_but_not_in_answer_from = sum([1 for el in evaluations_context_from if (el.ground_truth_in_relevant_emails and not el.ground_truth_in_answer)]) / len(evaluations_context_from)
+
+    # Calculate accuracies and proportions for `evaluations_context_date`
+    context_date_accuracy = sum([1 for el in evaluations_context_date if el.ground_truth_in_answer]) / len(evaluations_context_date)
+    proportion_of_groundtruth_in_retrieved_but_not_in_relevant_date = sum([1 for el in evaluations_context_date if (el.ground_truth_in_retrieved_emails and not el.ground_truth_in_relevant_emails)]) / len(evaluations_context_date)
+    proportion_of_groundtruth_in_relevant_but_not_in_answer_date = sum([1 for el in evaluations_context_date if (el.ground_truth_in_relevant_emails and not el.ground_truth_in_answer)]) / len(evaluations_context_date)
+
 
 
     for index, eval_pair in enumerate(evaluation_dataset):
@@ -167,11 +189,21 @@ def evaluate_all():
     ==Evaluation results==:
 
     Base accuracy: {base_accuracy} ({sum([1 for el in evaluations_base if el.ground_truth_in_answer])}/{len(evaluations_base)})
-    Context from accuracy: {context_from_accuracy} ({sum([1 for el in evaluations_context_from if el.ground_truth_in_answer])}/{len(evaluations_context_from)})
-    Context date accuracy: {context_date_accuracy} ({sum([1 for el in evaluations_context_date if el.ground_truth_in_answer])}/{len(evaluations_context_date)})
-    Context combined accuracy: {context_combined_accuracy} ({sum([1 for el in evaluations_context_combined if el.ground_truth_in_answer])}/{len(evaluations_context_combined)})
+    Proportion of ground truth in retrieved but not in relevant (base): {proportion_of_groundtruth_in_retrieved_but_not_in_relevant_base} ({sum([1 for el in evaluations_base if (el.ground_truth_in_retrieved_emails and not el.ground_truth_in_relevant_emails) ])} / {len(evaluations_base)})
+    Proportion of ground truth in relevant but not in answer (base): {proportion_of_groundtruth_in_relevant_but_not_in_answer_base} ({sum([1 for el in evaluations_base if (el.ground_truth_in_relevant_emails and not el.ground_truth_in_answer) ])} / {len(evaluations_base)})
 
-    """
+    Context from accuracy: {context_from_accuracy} ({sum([1 for el in evaluations_context_from if el.ground_truth_in_answer])}/{len(evaluations_context_from)})
+    Proportion of ground truth in retrieved but not in relevant (context from): {proportion_of_groundtruth_in_retrieved_but_not_in_relevant_from} ({sum([1 for el in evaluations_context_from if (el.ground_truth_in_retrieved_emails and not el.ground_truth_in_relevant_emails) ])} / {len(evaluations_context_from)})
+    Proportion of ground truth in relevant but not in answer (context from): {proportion_of_groundtruth_in_relevant_but_not_in_answer_from} ({sum([1 for el in evaluations_context_from if (el.ground_truth_in_relevant_emails and not el.ground_truth_in_answer) ])} / {len(evaluations_context_from)})
+
+    Context date accuracy: {context_date_accuracy} ({sum([1 for el in evaluations_context_date if el.ground_truth_in_answer])}/{len(evaluations_context_date)})
+    Proportion of ground truth in retrieved but not in relevant (context date): {proportion_of_groundtruth_in_retrieved_but_not_in_relevant_date} ({sum([1 for el in evaluations_context_date if (el.ground_truth_in_retrieved_emails and not el.ground_truth_in_relevant_emails) ])} / {len(evaluations_context_date)})
+    Proportion of ground truth in relevant but not in answer (context date): {proportion_of_groundtruth_in_relevant_but_not_in_answer_date} ({sum([1 for el in evaluations_context_date if (el.ground_truth_in_relevant_emails and not el.ground_truth_in_answer) ])} / {len(evaluations_context_date)})
+
+    Context combined accuracy: {context_combined_accuracy} ({sum([1 for el in evaluations_context_combined if el.ground_truth_in_answer])}/{len(evaluations_context_combined)})
+    Proportion of ground truth in retrieved but not in relevant (context combined): {proportion_of_groundtruth_in_retrieved_but_not_in_relevant_combined} ({sum([1 for el in evaluations_context_combined if (el.ground_truth_in_retrieved_emails and not el.ground_truth_in_relevant_emails) ])} / {len(evaluations_context_combined)})
+    Proportion of ground truth in relevant but not in answer (context combined): {proportion_of_groundtruth_in_relevant_but_not_in_answer_combined} ({sum([1 for el in evaluations_context_combined if (el.ground_truth_in_relevant_emails and not el.ground_truth_in_answer) ])} / {len(evaluations_context_combined)})
+"""
 
     print(results)
 
@@ -215,13 +247,14 @@ def load_evaluations():
     
 
 def load_combined():
-    evaluations_context_combined = []
+    evaluations_context_combined:List[Evaluator] = []
 
     with open(EVAL_RESULT_PATH_CONTEXT_COMBINED_INPUT, 'rb') as f:
         evaluations_context_combined = pickle.load(f)
     
     context_combined_accuracy = sum([1 for el in evaluations_context_combined if el.ground_truth_in_answer])/len(evaluations_context_combined)
-
+    proportion_of_groundtruth_in_retrieved_but_not_in_relevant = sum([1 for el in evaluations_context_combined if (el.ground_truth_in_retrieved_emails and el.ground_truth_in_relevant_emails == False) ])/len(evaluations_context_combined)
+    proportion_of_groundtruth_in_relevant_but_not_in_answer = sum([1 for el in evaluations_context_combined if (el.ground_truth_in_relevant_emails and el.ground_truth_in_answer == False) ])/len(evaluations_context_combined)
 
     for index, evaluator in enumerate(evaluations_context_combined):
         
@@ -247,9 +280,10 @@ def load_combined():
     ==Evaluation results==:
 
     Context combined accuracy: {context_combined_accuracy} ({sum([1 for el in evaluations_context_combined if el.ground_truth_in_answer])}/{len(evaluations_context_combined)})
-
+    Proportion of ground truth in retrieved but not in relevant: {proportion_of_groundtruth_in_retrieved_but_not_in_relevant} ({sum([1 for el in evaluations_context_combined if (el.ground_truth_in_retrieved_emails and not el.ground_truth_in_relevant_emails) ])} / {len(evaluations_context_combined)})
+    Proportion of ground truth in relevant but not in answer: {proportion_of_groundtruth_in_relevant_but_not_in_answer} ({sum([1 for el in evaluations_context_combined if (el.ground_truth_in_relevant_emails and not el.ground_truth_in_answer) ])} / {len(evaluations_context_combined)})
     """
 
     print(results)
 
-load_combined()
+evaluate_combined(True)

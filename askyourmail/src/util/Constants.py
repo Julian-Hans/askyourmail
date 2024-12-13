@@ -11,29 +11,29 @@ log.basicConfig(
     level=LOGGING_LEVEL
 )
 
-load_dotenv("project.env")
+load_dotenv(".env")
 
 MODEL_NAME = "gpt-4o-mini"
 EMBEDDING_MODEL_NAME = "text-embedding-3-small"
 OPENAI_API_BASE = "https://api.openai.com/v1"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
+LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY", "langchain-api-key")
 
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_PROJECT"] = f"askyourmail_eval"
+os.environ["LANGCHAIN_PROJECT"] = f"askyourmail_eval_big_k"
 os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
 
 KAGGLEHUB_DATASET_NAME = "marawanxmamdouh/email-thread-summary-dataset"
 CHROMA_DB_PATH = "chroma_db"
 
 COLLECTION_NAME = "emails2"
-TOTAL_RETRIEVAL_K = 24 # TODO: should be a max 
-RETRIEVAL_K_NAIVE = int(TOTAL_RETRIEVAL_K*(1/3))
-RETRIEVAL_K_PER_FILTER = int(TOTAL_RETRIEVAL_K*(1/3)) 
-RETRIEVAL_K_COMBINED_FILTERS = int(TOTAL_RETRIEVAL_K*(1/3)) 
+TOTAL_RETRIEVAL_K = 160 # TODO: should be a max 
+RETRIEVAL_K_NAIVE = int(TOTAL_RETRIEVAL_K*(1/4))
+RETRIEVAL_K_PER_FILTER = int(TOTAL_RETRIEVAL_K*(1/4)) 
+RETRIEVAL_K_COMBINED_FILTERS = int(TOTAL_RETRIEVAL_K*(1/4)) 
 
 # evaluation graph only
-EVAL_GEN_BATCH_SIZE = 100
+EVAL_GEN_BATCH_SIZE = 25
 current_date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 EVAL_GEN_DATASET_PATH_BASE = f"evaluation/eval_gen_dataset"
 EVAL_GEN_DATASET_PATH = f"{EVAL_GEN_DATASET_PATH_BASE}_{current_date}_k_{EVAL_GEN_BATCH_SIZE}.json"
@@ -56,8 +56,6 @@ EVAL_RESULT_PATH_CONTEXT_COMBINED_INPUT = f"{EVAL_RESULT_PATH_BASE}_context_comb
 # checkpoints for big eval
 EVAL_RESULT_CHECKPOINT_PATH_CONTEXT_COMBINED = f"evaluation/checkpoints/"
 LATEST_EVAL_RESULT_CHECKPOINT_PATH_CONTEXT_COMBINED= f"{EVAL_RESULT_CHECKPOINT_PATH_CONTEXT_COMBINED}300_of_992.pickle"
-# as we average around 785 tokens per request, and 1m token cost 0.15 USD ->
-# 1 eval request costs around 0.000118110236 USD
-# -> when total retrieval k = 1000, one query costs around 0.12 USD
-# -> when total retrieval k = 100, one query costs around 0.012 USD
-# -> when total retrieval k = 10, one query costs around 0.0012 USD
+# as we average around 16000 tokens per request, and 1m token cost 0.15 USD ->
+# with k = 32  -> 0.00220095 USD per query
+# with k = 160 -> 0.01 USD per query

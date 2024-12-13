@@ -1,37 +1,33 @@
 # ASKYOURMAIL
 A conversational interface for retrieving emails and answering natural language queries based on them.
+It uses Langchain, Chroma and OpenAIs gpt4-o-mini as well as text-embedding-3-small.
 
-## TODOS:
-### Extract emails from an imap server:
-We need a way to expose emails to our system. Implement an *email* class in python (or use the imap tools one) that contains the most important metadata for our search. This includes: subject, sender, recipient, content, date received etc. Optimally, we would be able to build a *conversation* class from these, which we will use to populate our database for the retrieval system. 
+## Prerequisites
+This project uses Poetry (version 1.8.4) for virtual environment and dependency management, as well as Python (version 3.11.7). Make sure you have python and pip installed and (if not present) install poetry using 
 
-For our MVP, we can start by just loading a dataset (TODO: find one on keggle) and compiling it into *emails* and *conversations*, making it accessible in python.
+```pip install poetry```
 
-Later down the line, we could connect to an imap server to export (and update) our mails from there.
-Potential library to achieve this: 
-- https://pypi.org/project/imap-tools/
+Copy the `.env.example`file and rename it to `.env`, populating the required keys. You can use langsmith to track your experiments, but that is optional.
 
+Make sure that the chroma_db directory contains a chroma database with a valid collection. If there is none (or you want to generate your own, see section Populating chroma_db.)
 
-### Insert extracted emails into vector store
-Our most basic retrieval approach will be a simple vector store like: 
-- https://www.trychroma.com
-- https://www.pinecone.io
+## Quickstart:
+After making sure you meet all requirements, run the interactive interface using 
+```poetry run python main.py```
 
-We will create chunks of our *emails* or *conversations*, tokenize and generate embeddings (most likely through openAI) for them and insert these into our DB. For more complex knowledge modeling, we could use a graph-database like:
-- http://neo4j.com
+## Populating chroma_db:
+With `askyourmail/src/data/Processor.py` you can generate a new collection for the chroma database. You can change the dataset from `askyourmail/src/util/constants.py`, but will have to parse email dataset that differ from our format beforehand. 
+The process will take a long time, as the embeddings are created sequentially. The final database for our dataset should be around 1 GB in size.
 
-but for the MVP a simple rag retrieval should be enough.
+## How to use:
+In askyourmail/src you will find 3 python files serving different purposes.
+- `main.py`: runs a gradio instance accessible under localhost:7860 that allows interaction with the system. This assumes that the `chroma_db` directory contains a chroma database with a valid email collection.
+- `generateEvalDataset.py`: utilizes gpt4-o-mini to generate query-email pairs used for evaluation. They are saved to evaluation using the format specified in `askyourmail/src/util/constants.py`.
+- `evaluate.py`: runs evaluations given the parameters specified in `askyourmail/src/util/constants.py`. Pipe this into eval_log.txt using the pipe operator `python evaluate.py > eval_log.txt`
 
-### Build a Self-Rag Graph
-In order to have our llm of choice (openAI) generate answers grounded on the base truth of our Email data, we will implement a self-rag Graph (the basic outlines should already be in MainGraph.py), similar to this example:
-- https://www.youtube.com/watch?v=sgnrL7yo1TE
-
-
-### Come up with an evaluation system
-We need to measure the performance of our system. Since we will be asking natural language queries, we have to come up with a validation dataset that test if the response (returned *email* / *conversation*) is correct for our query. Ideas: evaluate similar to ndcg@10, hit@10 etc, use metrics presented in lecture. 
-
-### Develop rudimentary frontend
-To make our MVP interactive, we should develop a frontend. It should feature a conversational interface (like chatgpt), where one can enter a query, as well as read the response. Since our response will be grounded in our data, we need a way to output the sources of the generated answer and present them (or their IDs) to the user.
-Potential libraries to achieve this: 
-- https://streamlit.io
-- https://www.gradio.app
+## Costs and Evaluation Results
+As with `TOTAL_RETRIEVAL_K` = 32 one query averages around 16000 tokens per request, and 1m token cost 0.15 USD. This means that for
+- `TOTAL_RETRIEVAL_K` = 32  -> 0.0022 USD per query (yielding 84% accuracy, assuming the user provides good context)
+- `TOTAL_RETRIEVAL_K` = 160 -> 0.01   USD per query (yielding 94% accuracy, assuming the user provides good context)
+Our evaluation with a generated dataset of 600 elements and k = 32 cost a total of 1.75$.
+For more details, see `eval_log_*.txt`!

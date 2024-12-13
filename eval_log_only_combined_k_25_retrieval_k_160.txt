@@ -1,0 +1,417 @@
+
+        --------------------------
+        Evaluation pair 1/25
+
+        ==Context combined==:
+        Thread_ID: 293
+Query: When will Vince J Kaminski's assistant contact Shane Green to arrange interviews in June 2000?
+Expected Answer: My assistant will contact you Wednesday to arrange the interviews.
+Generated Answer: Vince J Kaminski's assistant will contact Shane Green on Wednesday to arrange the interviews.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 293
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 2/25
+
+        ==Context combined==:
+        Thread_ID: 1797
+Query: Can Susan confirm what the Goldman account is for from Stuart Zisman in January 2002?
+Expected Answer: The Goldman account is not specified in the email.
+Generated Answer: Yes, Susan can confirm what the Goldman account is for. According to Sara Shackleton, the Goldman account (for ERMT Corp.) was funded on November 6, 2001. Stuart Zisman also inquired about the Goldman account in his email dated January 10, 2002, asking Susan to confirm its purpose.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 1797
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 3/25
+
+        ==Context combined==:
+        Thread_ID: 1411
+Query: Louise, in November 2001, what did John ask Frank about TBG?
+Expected Answer: John asked for a recap on TBG.
+Generated Answer: In November 2001, John asked Frank for a recap on TBG. He has some history with this account and was aware of Frank's direction. John requested that Frank come by the next day to discuss it.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 1411
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 4/25
+
+        ==Context combined==:
+        Thread_ID: 1914
+Query: Richey, Cooper CRICHEY asked about Jill Dunlop's weekend plans in January 2002. What did she think about them?
+Expected Answer: Jill mentioned that she didn't think her weekend was going to be very exciting because her dad was leaving on Sunday and she would be doing the family thing most of the time.
+Generated Answer: Jill Dunlop mentioned that she didn't think her weekend in January 2002 would be particularly exciting, as she would be spending most of the time with her family. Her father was leaving on Sunday, so she was planning to do the family thing. She also mentioned that Emmy said they were thinking of going to Bass Brothers, and she expressed interest in going for a couple. However, she implied that her weekend plans were primarily focused on family activities rather than excitement or social outings.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 1914
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 5/25
+
+        ==Context combined==:
+        Thread_ID: 732
+Query: Elizabeth Sager mentioned arranging a time to play tennis in December 2000. When can we arrange a time?
+Expected Answer: Let's talk that first week of January and arrange a time.
+Generated Answer: I am sorry, I could not find the requested information in the provided Emails. Please provide more specific details.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: False
+Used Sources: 
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 6/25
+
+        ==Context combined==:
+        Thread_ID: 1104
+Query: Why is Brent working from home today according to Becky Spencer in November 2000?
+Expected Answer: Brent didn't get much sleep last night and is still under the weather.
+Generated Answer: Brent is working from home today because he didn't get much sleep last night and is still under the weather.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 1104
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 7/25
+
+        ==Context combined==:
+        Thread_ID: 1810
+Query: Ina Rangel asked Julie to ensure that John receives the passwords mentioned in the email in January 2001. Who should receive the passwords?
+Expected Answer: John
+Generated Answer: The passwords should be received by John.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 1810
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 8/25
+
+        ==Context combined==:
+        Thread_ID: 1316
+Query: Eric Bass mentioned an extra room reserved in September 2000. What is the cancellation policy for it?
+Expected Answer: We can cancel at any time before 6 tomorrow.
+Generated Answer: The cancellation policy for the extra room reserved by Eric Bass in September 2000 is that it can be canceled at any time before 6 tomorrow.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 1316
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 9/25
+
+        ==Context combined==:
+        Thread_ID: 737
+Query: What do I need to leave to get my toaster back according to Craig Buehler's email in January 2002?
+Expected Answer: Leave 4 boxes of 8 1/2 x 11 paper under the TV on the west end of the 39th floor.
+Generated Answer: According to Craig Buehler's email, to get your toaster back, you need to leave 4 boxes of 8 1/2 x 11 paper (no 3 hole punch paper) under the TV on the west end of the 39th floor.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 737
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 10/25
+
+        ==Context combined==:
+        Thread_ID: 872
+Query: In August 2000, Adnan Patel mentioned the requested changes for the name of the tradename associated with Northern Illinois Gas Company. What are those changes?
+Expected Answer: The request is to change the tradename's name from Nicor Gas Company to Northern Illinois Gas Company dba Nicor Gas Company.
+Generated Answer: In August 2000, Adnan Patel mentioned that Northern Illinois Gas Company changed its name to Nicor Gas Company. All deals need to be booked under Nicor Gas Company. However, they also use the name "Northern Illinois Gas Company d/b/a Nicor Gas Company" for business purposes. The main HQ company is NICOR GAS COMPANY, and the tradename could be set up as "Northern Illinois Gas Company d/b/a Nicor Gas Company" if needed. Adnan is currently waiting on name change documents but indicated that both names have been used interchangeably in contracts.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 872
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 11/25
+
+        ==Context combined==:
+        Thread_ID: 850
+Query: Sandi M Braband sent an email in November 2000 regarding the changes made to the Gas Management Agreement. What were those changes?
+Expected Answer: The changes discussed are reflected in the attached red lined draft of the Gas Management Agreement.
+Generated Answer: The changes made to the Gas Management Agreement were discussed in an email sent by Sandi M Braband on November 21, 2000. In her email, she mentioned that she attached a red-lined draft of the Gas Management Agreement with the changes that were discussed, and requested comments from the recipients. However, the specific details of the changes are not provided in the emails.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 850
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 12/25
+
+        ==Context combined==:
+        Thread_ID: 1529
+Query: What are the details for the Verifier Training session sent by Dale Ratliff in January 2002?
+Expected Answer: The Verifier Training will be held in EB42C1 from 8:00am to 5:00pm on Thursday January 31, 2002.
+Generated Answer: The Verifier Training session will be held in EB42C1 from 8:00am to 5:00pm on Thursday, January 31, 2002. If you have any questions, you can call Dale Ratliff at 713-853-1534.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 1529
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 13/25
+
+        ==Context combined==:
+        Thread_ID: 722
+Query: Murray, Kevin is discussing potential bidders for Enron in October 2001. Who is rumored to be a possible bidder for Enron?
+Expected Answer: Royal Dutch/Shell is one likely bidder.
+Generated Answer: Royal Dutch/Shell is rumored to be a possible bidder for Enron in October 2001.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 722
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 14/25
+
+        ==Context combined==:
+        Thread_ID: 982
+Query: What are the details of the conference call arranged by Dorothy Youngblood in October 2000?
+Expected Answer: The conference call is scheduled for Monday, 10/16/2000, from 2:00 P.M. to 3:00 P.M.
+Generated Answer: The conference call arranged by Dorothy Youngblood took place on Monday, October 16, 2000, from 2:00 P.M. to 3:00 P.M. The dial-in number was 1-888-422-7109, the host code was 409-555, and the participants code was 381-755. The participants included Molly Harris (the host), Gregg Penman, Jeff Hodge, Sara Shackleton, and Kay Mann.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 982
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 15/25
+
+        ==Context combined==:
+        Thread_ID: 629
+Query: What are we planning to do regarding Paskoff's requests mentioned by Michelle Cash in October 2000?
+Expected Answer: We were waiting until this week to respond to his requests for additional consideration.
+Generated Answer: Michelle Cash mentioned in her email on October 13, 2000, that they were waiting to respond to Paskoff's requests for additional consideration. However, the specific plans regarding those requests were not detailed in the email.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 629
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 16/25
+
+        ==Context combined==:
+        Thread_ID: 247
+Query: Susan W Pereira mentioned that Kali missed last Sunday's game in May 2001. What is the reason for her absence?
+Expected Answer: Kali missed last Sunday's game due to a schedule conflict that Susan had.
+Generated Answer: Kali missed last Sunday's game due to a schedule conflict that Susan had. Additionally, she will not attend the last game because it coincides with her best friend's birthday party.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 247
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 17/25
+
+        ==Context combined==:
+        Thread_ID: 1502
+Query: What is the docket number for the El Paso case on the agenda mentioned by Janet Butler in March 2002?
+Expected Answer: RP00-336
+Generated Answer: The docket number for the El Paso case mentioned by Janet Butler is RP00-336.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 1502
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 18/25
+
+        ==Context combined==:
+        Thread_ID: 344
+Query: On November 30, 2000, Sean and Diana tried to check with the brokers regarding the deal they don't recognize. What did they try to do?
+Expected Answer: They tried to check with the brokers, but couldn't get a hold of anyone.
+Generated Answer: On November 30, 2000, Sean and Diana tried to check with the brokers regarding a deal they did not recognize, but they couldn't get a hold of anyone.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 344
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 19/25
+
+        ==Context combined==:
+        Thread_ID: 644
+Query: Matthew Lenhart asked if the Pajama Pub Crawl is happening next weekend in September 2000. Is it?
+Expected Answer: Yes, it is next weekend.
+Generated Answer: Yes, the Pajama Pub Crawl is happening next weekend in September 2000, as indicated by Matthew Lenhart's email asking if it is happening and signing up for it.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 644
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 20/25
+
+        ==Context combined==:
+        Thread_ID: 1268
+Query: What was the overall deal discussed with Lee Johnson at GE in the email from Ben Jacoby in February 2001?
+Expected Answer: An 'Intergen' style deal with the current 4 LV Cogen units, and a purchase of 4 additional units as a replacement.
+Generated Answer: The overall deal discussed with Lee Johnson at GE involved the purchase of four LV CoGen units at a price of $16.45 million each. Additionally, the deal included a plan to purchase four more units from GE for delivery in late 2001. Ben Jacoby communicated that Lee Johnson was completely on board with the transaction and thought it would be a great opportunity.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 1268
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 21/25
+
+        ==Context combined==:
+        Thread_ID: 132
+Query: In April 2001, Jorge A Garcia mentioned the final version of Annex II in his email. What is it?
+Expected Answer: Here is the final version of Annex II.
+Generated Answer: The final version of Annex II was mentioned in Jorge A Garcia's email dated April 10, 2001, but the actual content of Annex II is not provided in the email body. Therefore, the specific details of what Annex II is are not available in the provided emails.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 132
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 22/25
+
+        ==Context combined==:
+        Thread_ID: 1482
+Query: Drew Fossum shared details about the hunting boondoggle in November 2000. What happened during it?
+Expected Answer: It was epic with lots of birds, seeing literally 1500-2000 over three days, and they limited out every day.
+Generated Answer: Drew Fossum shared that the hunting boondoggle in November 2000 was epic, with lots of wild birds observed—between 1500 to 2000 birds over three days of hunting. They were able to limit out every day, and Drew mentioned getting his first double (two shots resulting in two birds).
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 1482
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 23/25
+
+        ==Context combined==:
+        Thread_ID: 725
+Query: What did Carol Coats and Celeste Roberts discuss regarding Datren Williams' start date in the email from Vince J Kaminski in October 2000?
+Expected Answer: Celeste approved Datren Williams' February start date.
+Generated Answer: In the email from Vince J Kaminski dated October 12, 2000, Carol Coats mentioned that she and Celeste Roberts discussed Datren Williams' start date, and Celeste approved his February start date. Carol confirmed that Datren is aware of this approval, indicating that the matter is resolved and they are sorry for any confusion that may have occurred.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 725
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 24/25
+
+        ==Context combined==:
+        Thread_ID: 893
+Query: I received a request from Donald P Reinhardt in December 1999 about the price for the spot ticket for United Oil & Minerals, Inc. at meter 5053.
+Expected Answer: The ticket will be priced at 100% IF/HSC less $0.14.
+Generated Answer: In December 1999, Donald P Reinhardt requested a spot ticket for United Oil & Minerals, Inc. at meter 5053 with a price set at 100% IF/HSC less $0.14, providing for 1,400 MMBtu/d.
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 893
+
+        --------------------------
+        
+
+        --------------------------
+        Evaluation pair 25/25
+
+        ==Context combined==:
+        Thread_ID: 596
+Query: I received an email from Twanda Sweet in May 2001 asking if I can recommend a top notch trial lawyer at any firms in New York.
+Expected Answer: Yes, I can recommend a top notch trial lawyer in New York.
+Generated Answer: I have found an email from Twanda Sweet dated May 15, 2001, where she asks for a recommendation for a top notch trial lawyer in New York. However, I do not have an email from Twanda Sweet asking for a recommendation from you specifically. 
+
+The email thread IDs that contain relevant information are: [596].
+Ground Truth in Retrieved Emails: True
+Ground Truth in Relevant Emails: True
+Ground Truth in Answer: True
+Used Sources: 596
+
+        --------------------------
+        
+
+    ==Parameters==:
+
+    total k = 120
+    retrieval k naive = 40
+    retrieval k per filter = 40
+    retrieval k combined filters = 40
+    evaluation batch size = 25
+
+    ==Evaluation results==:
+
+    Context combined accuracy: 0.96 (24/25)
+    Proportion of ground truth in retrieved but not in relevant: 0.0 (0 / 25)
+    Proportion of ground truth in relevant but not in answer: 0.04 (1 / 25)
+    

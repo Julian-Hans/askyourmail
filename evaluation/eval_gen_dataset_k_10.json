@@ -1,0 +1,202 @@
+[
+    {
+        "email": {
+            "thread_id": "619",
+            "subject": "Austin",
+            "timestamp": 972616980,
+            "date": "2000-10-26 23:23:00",
+            "from": "Eric Bass",
+            "to": "['Jason.Bass2@COMPAQ.com']",
+            "body": "Do you want to go to Austin tonight?  I have an extra ticket to the game \ntomorrow.  We will be back to Houston by 5 tomorrow.\nLet me know.\n\nEric"
+        },
+        "eval_gen_agent_output": {
+            "query": "Are you interested in going to Austin tonight for the game? I have an extra ticket.",
+            "context_query_from": "Eric Bass asked if you are interested in going to Austin tonight for the game. Do you want to go?",
+            "context_query_date": "Eric Bass asked if you are interested in going to Austin tonight for the game in October 2000. Do you want to go?",
+            "context_query_combined": "Eric Bass asked if you are interested in going to Austin tonight for the game in October 2000. Do you want to go?",
+            "answer": "Yes, I have an extra ticket to the game tomorrow.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1286",
+            "subject": "Midway",
+            "timestamp": 991124340,
+            "date": "2001-05-29 04:19:00",
+            "from": "Kay Mann",
+            "to": "['dcturner@tecoenergy.com']",
+            "body": "Hi Doug,\n\nI hear you are working on the Midway deal.  Me, too.   I want to go back to \nthe restaurant  you suggested with the remarkable decor and wine list (was it \nBurns, something like that?).  \n\n I look forward to working with you on this one.\n\nKay"
+        },
+        "eval_gen_agent_output": {
+            "query": "What restaurant did Kay Mann want to revisit related to the Midway deal?",
+            "context_query_from": "What restaurant did Kay Mann want to revisit related to the Midway deal that Doug suggested?",
+            "context_query_date": "What restaurant did Kay Mann want to revisit related to the Midway deal in May 2001?",
+            "context_query_combined": "What restaurant did Kay Mann want to revisit related to the Midway deal that Doug suggested in May 2001?",
+            "answer": "The restaurant is Burns, something like that.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "334",
+            "subject": "IntercontinentalExchange, LLC",
+            "timestamp": 971402760,
+            "date": "2000-10-12 22:06:00",
+            "from": "Tana Jones",
+            "to": "['Mark Powell']",
+            "body": "----- Forwarded by Tana Jones/HOU/ECT on 10/13/2000 09:06 AM -----\n\n\tAndy Zipper@ENRON\n\t10/12/2000 05:44 PM\n\t\t \n\t\t To: Tana Jones/HOU/ECT@ECT\n\t\t cc: \n\t\t Subject: IntercontinentalExchange, LLC\n\nTana,\nCan you please have ENA, EPMI, and Enron Canada Corp. each sign a copy of the \nparticipant agreement attached below for the Intercontinental Exchange. When \nsigned please return them the fax number listed and let me know when they \nhave gone out. I got Mark Taylor's okay on this.\nLet me know if you have any questions.\nAndy\n---------------------- Forwarded by Andy Zipper/Corp/Enron on 10/12/2000 \n04:52 PM ---------------------------\n\n\nDuuna Richardson <duuna.richardson@intcx.com> on 10/05/2000 11:54:52 AM\nTo: \"'Andy.zipper@enron.com'\" <Andy.zipper@enron.com>\ncc: Rafe Pirutinsky <rafael.pirutinsky@intcx.com> \n\nSubject: IntercontinentalExchange, LLC\n\n\n>  Dear Andy,\n>\n>  Per Rafael Pirutinsky of Intercontinental, attached is some\n> additional information about The ICE.\n>\n>  First, is an electronically executed copy of our Participant\n> Agreement signed by each customer and our Service and Pricing Schedules.\n> If you have any questions,  please call Chuck Vice at 770.738.2129.  If\n> not, you may execute and return a copy to Chuck's attention at the address\n> below at your earliest convenience.\n>\n>  Also attached is our Customer Information Packet which contains a\n> functional and technical overview of our trading system, The ICE, as well\n> as instructions for downloading the application and requesting access as a\n> Demo User.  If you have any questions regarding this packet, please call\n> the ICE Helpdesk at 770.738.2101.  They can answer your technical\n> questions or have an appropriate technology representative speak with you.\n>\n>  Thank you for your interest.\n>\n>  Regards,\n>\n>  Duuna Richardson\n>  IntercontinentalExchange, LLC\n>  2100 RiverEdge Parkway, Suite 400\n>  Atlanta, GA  30328\n>  Tel:    770.738.2137\n>  Fax:   770.951.5481\n>  ---------------------------------------------------\n <<Participant Agreement 080200.doc>>  <<Service and Pricing Schedules.doc>>\n <<Customer Information Packet.doc>>\n\n\n\n\n - Participant Agreement 080200.doc\n - Service and Pricing Schedules.doc\n - Customer Information Packet.doc\n\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "What documents need to be signed for the Intercontinental Exchange?",
+            "context_query_from": "Tana Jones mentioned that ENA, EPMI, and Enron Canada Corp. need to sign documents for the Intercontinental Exchange. What documents need to be signed?",
+            "context_query_date": "Tana Jones mentioned that documents needing signatures for the Intercontinental Exchange were discussed in October 2000. What documents need to be signed?",
+            "context_query_combined": "Tana Jones mentioned that ENA, EPMI, and Enron Canada Corp. need to sign documents for the Intercontinental Exchange in October 2000. What documents need to be signed?",
+            "answer": "The participant agreement must be signed by ENA, EPMI, and Enron Canada Corp.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1618",
+            "subject": "RE: Thank You",
+            "timestamp": 1005297682,
+            "date": "2001-11-09 04:21:22",
+            "from": "Horton, Stanley SHORTON",
+            "to": "['McGowan', 'Mike W. Mmcgowa']",
+            "body": "Thanks Mike.  That means alot.\n\n -----Original Message-----\nFrom: \tMcGowan, Mike W.  \nSent:\tThursday, November 08, 2001 5:20 PM\nTo:\tHorton, Stanley\nSubject:\tThank You\n\n\n\nStan - Thank you for taking the time to brief the employees in Omaha today.  Needless to say, these are trying times and you are correct when you say that communications are very important!  All of us have to provide leadership and set the example for the employees.  We really appreciate your leadership and commitment to the employees!!!  It really does mean a lot to the employees.\n\nThank You very much.\n\nMike McGowan"
+        },
+        "eval_gen_agent_output": {
+            "query": "What did Mike McGowan thank Stanley Horton for?",
+            "context_query_from": "What did Mike McGowan thank Stanley Horton for in his email?",
+            "context_query_date": "What did Mike McGowan thank Stanley Horton for in November 2001?",
+            "context_query_combined": "What did Mike McGowan thank Stanley Horton for in his email in November 2001?",
+            "answer": "Mike McGowan thanked Stanley Horton for taking the time to brief the employees in Omaha.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1088",
+            "subject": "UK Submission of Positions",
+            "timestamp": 977908560,
+            "date": "2000-12-27 04:16:00",
+            "from": "Sally Beck",
+            "to": "['Shona Wilson']",
+            "body": "To continue to keep you in the loop - looks like Mike is moving in the right \ndirection on this --Sally \n---------------------- Forwarded by Sally Beck/HOU/ECT on 12/27/2000 05:15 PM \n---------------------------\n\n\nMike Jordan\n12/24/2000 08:15 AM\nTo: Rick Buy/HOU/ECT@ECT, Ted Murphy/HOU/ECT@ECT, David Port/Market \nRisk/Corp/Enron@ENRON\ncc: James New/LON/ECT@ECT, Debbie R Brackett/HOU/ECT@ECT, David \nHardy/LON/ECT@ECT, John Paskin/LON/ECT@ECT, Brian Hudson/LON/ECT@ECT, Mark \nPickering/LON/ECT@ECT, Fernley Dyson/LON/ECT@ECT, Sally Beck/HOU/ECT@ECT, \nMichael R Brown/LON/ECT@ECT, John Sherriff/LON/ECT@ECT \nSubject: UK Submission of Positions\n\nIn response to the below, there was a short planning meeting between \nCommercial Support and IT, specific objectives were identified which would \nenhance the DPR and reporting process, and improve the robustness of our \nprocesses, the following has been agreed in principle:\n\n1. Commercial groups to input all trades and save out all curves by 6 PM GMT, \npending agreement from the Office of the Chair.\n2. IT to investigate/develop a report showing valuation of new trades, to be \nsigned off by risk management before end of day.\n3. Full valuation to start at approximately 7 PM GMT.  On completion, a \ncomparison of the portfolio valuation will be made to the prior day's \nportfolio valuation and any material (threshold to be specified) movements to \nbe reported to risk management ( for consideration of rerun )\n4. IT Operations to monitor valuation for software and hardware errors, to be \nreported to technical support in the event of a failure.  \n\nThe benefits of this process will be to trap problems early and allow time \nfor completion of the rerun of the valuation systems prior to the beginning \nof the next trading day.\n\nEarly in the new year we will produce daily process timelines for each \nbusiness area/valuation system for the following:\na) current state\nb) proposed interim state without automated trade capture/booking\nc) target final state including automated trade capture/booking ( note - \nMarket Tracker for UK Power business is currently in system test - \nimplementation timelines for other businesses not yet available )\n\nUpon completion of these analyses we will circulate and request full \ncommercial signoff\n\nRegards\n\nMike Jordan, James New, Mark Pickering, John Paskin and Brian Hudson\n---------------------- Forwarded by Mike Jordan/LON/ECT on 24/12/2000 13:56 \n---------------------------\n\n\nMike Jordan\n19/12/2000 16:02\nTo: Rick Buy/HOU/ECT@ECT, Ted Murphy/HOU/ECT@ECT, David Port/Market \nRisk/Corp/Enron@ENRON\ncc: James New/LON/ECT@ECT, Debbie R Brackett/HOU/ECT@ECT, David \nHardy/LON/ECT@ECT, John Paskin/LON/ECT@ECT, Brian Hudson/LON/ECT@ECT, Mark \nPickering/LON/ECT@ECT, Fernley Dyson/LON/ECT@ECT, Sally Beck/HOU/ECT@ECT \n\nSubject: UK Submission of Positions\n\nJust to follow up on James's note of yesterday - my apologies for being out\n\nThe elimination of the requirement to 'grab' the FX and IR market environment \nfrom Houston ( and consequently use European data ) can improve our ability \nto kick the overnight batch processing off earlier in the evening. James and \nI will be working with Brian Hudson to determine the timetable for effecting \nthis change\n\nThe revised batch start time would improve the opportunity to detect any \nsystem failure and complete a rerun of the valuation process so as to deliver \ncompleted results by the time the Risk Management team arrive at their desks \nin the morning. System failures are the most significant problem we face in \ndelivering timely information to Houston. Consequently the probability of \nmeeting current reporting deadlines would be greatly improved given that we \nwill have full IT overnight support covering for any IT failure and curve \ninput validation processes on trade date.\n\nIndeed given the successful completion of all overnight runs we are able to \ndeliver\n\nOfficialisation of all valuation systems and most spreadsheets ( David Hardy \nis in final testing of the Eastern spreadsheet feed ) by the 10 AM deadline ( \nHouston 4 AM )\nFlash p&l by the 1PM deadline ( Houston 7AM )\nCompletion of the final DPR to be submitted to Houston by the 5 PM deadline ( \nHouston 11AM )\n\nJames and I are currently finalising a document reviewing all possible \nchanges to business processes that could improve these times. This is in \naddition to working with Commercial and IT to assess the possibility of \ndelivering significantly faster revaluation systems that could assist in \ndelivering a trade date control process.\n\nI can confirm that there is significant work to do in this area, however, we \nare dedicated to meeting the objectives of improved/more real time control. \nPlease feel free to call if the above requires any additional commentary.\n\nRegards\n\nMike\n\n\n\n\n---------------------- Forwarded by Mike Jordan/LON/ECT on 19/12/2000 15:06 \n---------------------------\n\n\nJames New\n18/12/2000 09:10\nTo: Rick Buy/HOU/ECT@ECT\ncc: John Sherriff/LON/ECT@ECT, Michael R Brown/LON/ECT@ECT, Fernley \nDyson/LON/ECT@ECT, Mike Jordan/LON/ECT@ECT, Ted Murphy/HOU/ECT@ECT, Gary \nHickerson/HOU/ECT@ECT \n\nSubject: UK Submission of Positions\n\nRick,\n\nThanks you for your note below. We are today implementing a flash P&L \nprocess. We aim to report daily numbers at 7am Houston time and will start \ntoday with the P&L. We will build on this and hope to have draft positions \nand VAR for most books within a week or so. There will be a reconciliation of \nflash to final numbers which will be included in our return to Houston. \n \nI will put together a note on the London DPR production process which goes \ninto the process we currently have, the process we actually need to have, and \nthe obstacles that are in the way. I would expect this to be finalised \ntomorrow. Obtaining the USD interest rate curve on a more timely basis is \njust one of our problems but it is unfortunately by no means our only or most \nserious problem.\n\nJames\n\n\n   \n\n\nFrom:  Rick Buy                                                             \n15/12/2000 21:59\t\n\t\n\t\n\t                           \n\t\n\nTo: John Sherriff/LON/ECT@ECT, Michael R Brown/LON/ECT@ECT, Mike \nJordan/LON/ECT@ECT\ncc: Gary Hickerson/HOU/ECT@ECT, Ted Murphy/HOU/ECT@ECT \n\nSubject: UK Submission of Positions\n\nNeed your help on the following: Each day we are delayed in finalising var, \np&L and positions because the UK must wait for a USD  interest rate curves \nbefore submitting their data to Houston. I am also told that it is really not \nnecessary to wait for this curve and the data could be submitted close of \nbusiness London. Even if there was some minor inaccuracy from this method it \nwould be better than what we have now. This would greatly improve the \nefficiency (by 4 to 6 hours) in reporting to senior management. Can you guys \ninitiate this change or get me to the right person there. Thanks, Rick\n\n\n\n\n\n\n\n\n\n\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "What improvements are being made to the DPR and reporting process?",
+            "context_query_from": "What improvements is Mike Jordan making to the DPR and reporting process?",
+            "context_query_date": "What improvements are being made to the DPR and reporting process in December 2000?",
+            "context_query_combined": "What improvements is Mike Jordan making to the DPR and reporting process in December 2000?",
+            "answer": "Specific objectives have been identified to enhance the DPR and reporting process, including inputting all trades by 6 PM GMT and starting full valuation at approximately 7 PM GMT.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "384",
+            "subject": "RE: Aggie Happy Hour--tomorrow (7/26)",
+            "timestamp": 996154892,
+            "date": "2001-07-26 09:41:32",
+            "from": "Scott, Susan M. SSCOTT5",
+            "to": "[\"'jmenconi@adv-eng-ser-inc.com'\", \"'Friend\", \"Trip \\\\(JW\\\\)' <JWFriend@dow.com\", \"'Robert A. Parry\", 'M.S.', \"DABMP' <rparry@bcm.tmc.edu\", \"'aimee girl' <afriend@jdfcure.org\", 'Haughn', 'Jarrod Jhaughn', 'Sanchez', 'Monique Msanch2']",
+            "body": "I know I've thoroughly enjoyed all the commentary.  I can honestly say, I think this is the first time I've been invited to an Aggie happy hour....and to that end, kudos to all those who opted out of Sam's Boat...you now may be forced to deal with a longhorn interloper.\n\n\n -----Original Message-----\nFrom: \t\"John Menconi\" <jmenconi@adv-eng-ser-inc.com>@ENRON [mailto:IMCEANOTES-+22John+20Menconi+22+20+3Cjmenconi+40adv-eng-ser-inc+2Ecom+3E+40ENRON@ENRON.com] \nSent:\tThursday, July 26, 2001 3:36 PM\nTo:\t'Friend, Trip \\(JW\\)'; 'Robert A. Parry, M.S., DABMP'; 'aimee girl'; Haughn, Jarrod; Scott, Susan M.; Sanchez, Monique\nSubject:\tRE: Aggie Happy Hour--tomorrow (7/26)\n\n\nThis was all very entertaining.  Did I miss the meeting time?\n \n-----Original Message-----\nFrom: Friend, Trip (JW) [mailto:JWFriend@dow.com]\nSent: Thursday, July 26, 2001 3:29 PM\nTo: 'Robert A. Parry, M.S., DABMP'; aimee girl; Haughn, Jarrod; Scott, Susan M.; jmenconi@adv-eng-ser-inc.com; Sanchez, Monique\nSubject: RE: Aggie Happy Hour--tomorrow (7/26)\n \nsorry mo. i had not read your e-mail until after i had sent mine.  oops!  \n \ntony's sounds like fun to me, it's in the neighborhood, and i hear they have kick-ass ritas.  \n \nthe friends are in.  see you at tony's.\n \n \n-----Original Message-----\nFrom: Robert A. Parry, M.S., DABMP [mailto:rparry@bcm.tmc.edu]\nSent: Thursday, July 26, 2001 2:38 PM\nTo: Trip (Work); aimee girl; Haughn, Jarrod; Scott, Susan M.; jmenconi@adv-eng-ser-inc.com; Sanchez, Monique\nSubject: Re: Aggie Happy Hour--tomorrow (7/26)\nBy looking at the clock, it would appear the Mo beat Trip to the punch by 1 minute.  Accompany that with the fact that we have not gone to Tony's as a group, and just recently went to the Front Porch, and haven't been to Cahill's in a long time and it's crappy outside.  Therefore I have to give the nod to...\n \nthe Sanchezcamp, barring a major uproar from the Friend camp.\n \nWhat say ye?\n \n----- Original Message ----- \nFrom:Sanchez, Monique \nTo:\"Friend, Trip (JW)\" <JWFriend@dow.com>@ENRON ; Robert A. Parry, M.S., DABMP ; jmenconi@adv-eng-ser-inc.com << File: mailto:jmenconi@adv-eng-ser-inc.com >>  ; Scott, Susan M. ; Haughn, Jarrod << File: mailto:Jarrod.Haughn@enron.com >>  ; aimee girl \nSent:Thursday, July 26, 2001 1:59 PM\nSubject:RE: Aggie Happy Hour--tomorrow (7/26)\n \nI would personally...be up more for drinks and dinner at the same\ntime...than separate...but i'm a lush...can't hold my liquor.  \n>  -----Original Message-----\n> From: \"Friend, Trip (JW)\" <JWFriend@dow.com>@ENRON\n> Sent: Thursday, July 26, 2001 1:55 PM\n> To: 'Robert A. Parry, M.S., DABMP'; jmenconi@adv-eng-ser-inc.com;\n> Scott, Susan M.; Haughn, Jarrod; Sanchez, Monique; 'aimee girl'\n> Subject: RE: Aggie Happy Hour--tomorrow (7/26)\n> \n> to avoid jay-rod's imminent brain implosion, here are my thoughts...\n> \n> for margaritas, how about tealas.\n> if the rain holds up, how about the front porch pub - farrago combo.\n> \n> - tripas\n> \n----- Original Message ----- \nFrom:Sanchez, Monique \nTo:Haughn, Jarrod ; Robert A. Parry, M.S., DABMP << File: mailto:rparry@bcm.tmc.edu >>  ; Trip (Work) << File: mailto:JWFRIEND@dow.com >>  ; jmenconi@adv-eng-ser-inc.com ; Scott, Susan M. << File: mailto:Susan.M.Scott@enron.com >>  \nSent:Thursday, July 26, 2001 1:54 PM\nSubject:RE: Aggie Happy Hour--tomorrow (7/26)\n \nTONY's on Ella.....730.....awesome mex food......strong margaritas....we\ncan do cahills after or all go home.  Any other suggestions????weather\nlooks crappy.\n> -----Original Message-----\n> From: Haughn, Jarrod [mailto:Jarrod.Haughn@ENRON.com]\n> Sent: Thursday, July 26, 2001 1:50 PM\n> To: Robert A. Parry, M.S., DABMP; Trip (Work);\n> jmenconi@adv-eng-ser-inc.com << File: mailto:jmenconi@adv-eng-ser-inc.com >> ; Scott, Susan M.; Sanchez, Monique\n> Subject: RE: Aggie Happy Hour--tomorrow (7/26)\n> \n> \n> Somebody make a decision.  The suspense is killing me.\n> \n> I've just had my second Freebird's in the last 24 hours.  Life is\n> good.\n> \n> \n> \n> -----Original Message-----\n> From: Robert A. Parry, M.S., DABMP [mailto:rparry@bcm.tmc.edu]\n> Sent: Thursday, July 26, 2001 1:40 PM\n> To: Trip (Work); jmenconi@adv-eng-ser-inc.com << File: mailto:jmenconi@adv-eng-ser-inc.com >> ; Scott, Susan M.;\n> Haughn,\n> Jarrod; Sanchez, Monique\n> Subject: Re: Aggie Happy Hour--tomorrow (7/26)\n> \n> \n> So what is the status on all this brouhaha?  Anyone?  Anyone?\n> \n> \n> ----- Original Message -----\n> From: Sanchez, Monique <mailto:Monique.Sanchez@enron.com << File: mailto:Monique.Sanchez@enron.com >> >\n> Sent: Thursday, July 26, 2001 10:17 AM\n> Subject: RE: Aggie Happy Hour--tomorrow (7/26)\n> \n> how bout berryhill if it is nice outside?  i also leaning towards\n> somewhere close to home.  we could also all go eat and drink ritas at\n> Tony's on Ella if it is dreary.\n> \n> \n> >  -----Original Message-----\n> > From: \"Friend, Trip (JW)\"\n> > > Sent: Wednesday, July 25, 2001 4:35 PM\n> > To: Haughn, Jarrod; rparry@bcm.tmc.edu << File: mailto:rparry@bcm.tmc.edu >>  <mailto:rparry@bcm.tmc.edu << File: mailto:rparry@bcm.tmc.edu >> > ;\n> Sanchez, Monique\n> > Subject: RE: Aggie Happy Hour--tomorrow (7/26)\n> >\n> > maybe, maybe not.\n> >\n> > what about another location later in the evening (circa 7:30)?\n> >\n> > - mr. non-committal inside-the-loop\n> \n> \n> > -----Original Message-----\n> > From: Haughn, Jarrod [mailto:Jarrod.Haughn@ENRON.com]\n> > Sent: Wednesday, July 25, 2001 12:35 PM\n> > To: rparry@bcm.tmc.edu << File: mailto:rparry@bcm.tmc.edu >>  <mailto:rparry@bcm.tmc.edu> ; Sanchez,\n> Monique;\n> jwfriend@dow.com << File: mailto:jwfriend@dow.com >>  <mailto:jwfriend@dow.com>\n> > Subject: Aggie Happy Hour--tomorrow (7/26)\n> >\n> >\n> > Hey guys....\n> >\n> > Aggie Happy Hour is tomorrow night at Sam's Boat.  It's probably the\n> > only time you can go there and not be surrounded by topless dancers,\n> > muscleheads on roids, club freaks and 18 year olds.....\n> >\n> > If anyone is interested, lemme know....\n> >\n> > JROD"
+        },
+        "eval_gen_agent_output": {
+            "query": "What did Susan Scott think about being invited to the Aggie happy hour?",
+            "context_query_from": "What did Susan Scott think about being invited to the Aggie happy hour in an email she sent?",
+            "context_query_date": "What did Susan Scott think about being invited to the Aggie happy hour in July 2001?",
+            "context_query_combined": "What did Susan Scott think about being invited to the Aggie happy hour in July 2001 in an email she sent?",
+            "answer": "Susan Scott thoroughly enjoyed all the commentary and mentioned it was the first time she was invited to an Aggie happy hour.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1153",
+            "subject": "VEPCO interconnection agreement",
+            "timestamp": 969199200,
+            "date": "2000-09-17 10:00:00",
+            "from": "Kay Mann",
+            "to": "['Reagan Rorschach']",
+            "body": "Hi Reagan,\n\nIs a conference room available on 29?  We are having a hard time finding a \nmeeting place.\n\nThanks,\n\nKay\n---------------------- Forwarded by Kay Mann/Corp/Enron on 09/17/2000 08:59 \nPM ---------------------------\n\n\n\"Nancy Wodka\" <nwodka@bracepatt.com> on 09/15/2000 05:25:00 PM\nTo: <Kay.Mann@enron.com>\ncc:  \n\nSubject: Re: VEPCO interconnection agreement\n\nThat will work fine for me.\n\n>>> <Kay.Mann@enron.com> 09/15/00 05:42PM >>>\n\nI should mention 900am as the time!\n\n\n\n                                                      \n (Embedded     Enron North America Corp.              \n image moved                                          \n to file:      From:  Kay Mann                        \n pic23303.pcx) 09/15/2000 04:36 PM                    \n                                                      \n                                                      \n                                                      \n\n\n\nTo:   Christi L Nicolay/HOU/ECT@ECT, Mitch Robinson/Corp/Enron@Enron, Larry\n      Soderquist/HOU/ECT@ECT, Reagan Rorschach/NA/Enron@Enron,\n      nwodka@bracepatt.com \ncc:   Heather Kroll/HOU/ECT@ECT, Ozzie Pagan/HOU/ECT@ECT, Ben\n      Jacoby/HOU/ECT@ECT\n\nSubject:  VEPCO interconnection agreement\n\nHow does everybody look for a discussion concerning the VEPCO\ninterconnection agreement on Tuesday, Sept 19?\n\nI've checked with Christi, Mitch and Reagan, so they don't need to confirm.\n\nDetails to follow...\n\nThanks,\n\nKay\n\n\n\n\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "Is there a conference room available on the 29th for a meeting?",
+            "context_query_from": "Did Kay Mann check if there is a conference room available on the 29th for a meeting?",
+            "context_query_date": "Did Kay Mann check if there is a conference room available on the 29th for a meeting in September 2000?",
+            "context_query_combined": "Did Kay Mann check if there is a conference room available on the 29th for a meeting in September 2000?",
+            "answer": "Kay is inquiring about the availability of a conference room on the 29th.",
+            "specificness": 1,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "713",
+            "subject": "Updated Credit Watchlist",
+            "timestamp": 992231940,
+            "date": "2001-06-10 23:59:00",
+            "from": "Veronica Gonzalez",
+            "to": "['Kysa Alport', '\"Black', 'Tamara Jae\" <TamaraJae.Black@ENRON.com>@SMTP@enronXgate', 'William S Bradford', 'Harry Bucalo', 'Lesli Campbell', 'Sharen Cason', 'Adriana Celedon', 'Charles Decker', 'Rhonda L Denton', '\"Diamond', 'Daniel\" <Daniel.Diamond@ENRON.com>@SMTP@enronXgate', 'Heather Dunton', 'Mark Fischer', 'Genia FitzGerald', 'Stephanie Gardner', 'Lisa Gillette', '\"Hammond', 'Pearce W.\" <Pearce.W.Hammond@ENRON.com>@SMTP@enronXgate', 'Leslie Hansen', 'Bill D Hare', 'Claudette Harvey', 'Andrea Hauser', 'Bryan Hull', 'Kimberly Hundl', 'Kimberly Indelicato', 'Lisa Lees', 'Lorie Leigh', 'John Llodra', 'Teresa Mandola', 'Judy Martinez', 'Dan McCairns', 'Evelyn Metoyer', 'Janet H Moore', 'Janice R Moore', 'Tom Moran', 'Melissa Ann Murphy', 'Tracy Ngo', 'Lucy Ortiz', 'Stephanie Piwetz', '\"Plunkett', 'Derenda\" <Derenda.Plunkett@ENRON.com>@SMTP@enronXgate', 'David Portz', 'Kevin M Presto', 'Jeff Richter', 'Richard Ring', 'Chaun Roberts', 'Tina Rode', 'Justin Rostant', 'Valarie Sabo', 'Elizabeth Sager', 'Gregory Schockling', 'Adriane Schultea', 'Stephanie Sever', 'Suneet Sharma', 'Lisa Shoemake', 'Amy Smith', 'Connie Sutton', 'Kate Symes', 'Kim S Theriot', 'Kerri Thompson', 'David J Vitrella', 'Jubran Whalan', 'George Wood', 'Christian Yoder', 'John Zurita']",
+            "body": "Attached please find the EPMI Power Credit Watch List as of 06/11/01.  Please \ndirect any questions and/or comments to the Credit Hotline (713-853-1803).\n\n\n \n\nThank you,\nVeronica Gonzalez\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "What is the date of the EPMI Power Credit Watch List?",
+            "context_query_from": "Veronica Gonzalez mentions the date of the EPMI Power Credit Watch List. What is it?",
+            "context_query_date": "The email I received in June 2001 mentions the date of the EPMI Power Credit Watch List. What is it?",
+            "context_query_combined": "Veronica Gonzalez's email in June 2001 mentions the date of the EPMI Power Credit Watch List. What is it?",
+            "answer": "06/11/01",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1316",
+            "subject": "UT",
+            "timestamp": 968298780,
+            "date": "2000-09-06 23:53:00",
+            "from": "Matthew Lenhart",
+            "to": "['Timothy Blanchard']",
+            "body": "i will drive if it doesn't rain.  my windshield wipers don't work."
+        },
+        "eval_gen_agent_output": {
+            "query": "Will Matthew drive if it rains?",
+            "context_query_from": "Will Matthew drive if it rains? This is regarding an email from Matthew Lenhart.",
+            "context_query_date": "Will Matthew drive if it rains? This is regarding an email received in September 2000.",
+            "context_query_combined": "Will Matthew drive if it rains? This is regarding an email from Matthew Lenhart received in September 2000.",
+            "answer": "Matthew will drive if it doesn't rain.",
+            "specificness": 1,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "215",
+            "subject": "CES",
+            "timestamp": 955591140,
+            "date": "2000-04-12 21:59:00",
+            "from": "Chris Germany",
+            "to": "['Dana Daigle']",
+            "body": "What happens if we sell CES spot gas??  It would be fixed price.\n\nMaybe we could send CES a different type of report since they have so many \ndeals.  What do you think??\n\n\n   \n\t\n\t\n\tFrom:  Dana Daigle @ ENRON                           04/13/2000 08:33 AM\n\t\n\nTo: Chris Germany/HOU/ECT@ECT\ncc:  \nSubject: CES\n\nHow do you feel about not sending CES a confirm. unless the deal is for \n1month or longer?\n\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "What happens if we sell CES spot gas?",
+            "context_query_from": "Chris Germany asks Dana Daigle what happens if we sell CES spot gas.",
+            "context_query_date": "In April 2000, Chris Germany asks Dana Daigle what happens if we sell CES spot gas.",
+            "context_query_combined": "In April 2000, Chris Germany asks Dana Daigle what happens if we sell CES spot gas.",
+            "answer": "It would be fixed price.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    }
+]

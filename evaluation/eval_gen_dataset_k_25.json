@@ -1,0 +1,502 @@
+[
+    {
+        "email": {
+            "thread_id": "293",
+            "subject": "Internship",
+            "timestamp": 962350380,
+            "date": "2000-06-30 03:33:00",
+            "from": "Vince J Kaminski",
+            "to": "['\"Shane Green\" <shanecgreen@earthlink.net> @ ENRON']",
+            "body": "Shane,\n\nMonday would work for us.\n\nMy assistant will contact you Wednesday to arrange the interviews.\n\nVince\n\n\n\n\n\n\n\"Shane Green\" <shanecgreen@earthlink.net> on 06/30/2000 11:33:53 AM\nTo: <Vince.J.Kaminski@enron.com>\ncc:  \nSubject: Internship\n\n\n\nDr. Kaminski:\n?\nI just wanted to touch base and see if I needed to snail mail  a copy of my \nresume or get in touch with anyone else over at Enron.?  \n?\nThe finance department at LSU will be sending out financial  award letters to \nnew Ph.D. students before long, and my interning at Enron would  free up some \nadditional departmental funds.? In addition, If I will be here  in Baton \nRouge during the fall, I will need to pay my tuition next month.?  I am able \nto pursue an internship in large part because of the department's  \ncooperation and assurance that when I return I will still have a research and \nor  teaching assistantship to help fund the completion of Ph.D.? I have been  \ntold that such cooperation and assurances are rare at LSU, so I am trying to  \nrock the boat as little as possible.\n?\nI realize until I receive an offer from Enron my internship (I  say \ninternship rather than sabbatical because LSU will not continue to pay me my  \nstipend while I am away) is not assured until an offer has been extended by  \nEnron.? I understand that there are procedures?and protocols that must  be \nfollowed before this occurs, and I would be willing to do whatever is  \nnecessary to move to the next step in that process.\n?\nI will be in Houston on July 8 & 9 for my wife's  grandmother's 80th \nbirthday.? If it would be convenient, I could be in  town?on the preceding \nFriday, or following Monday for a visit and/or  interview.? If not, given the \nrelatively close proximity between Baton  Rouge and Houston, I would be happy \nto come at another time.\n?\nThanks again,\nShane Green\n?\n\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "When will my assistant contact Shane Green to arrange interviews?",
+            "context_query_from": "When will Vince J Kaminski's assistant contact Shane Green to arrange interviews?",
+            "context_query_date": "When will my assistant contact Shane Green to arrange interviews in June 2000?",
+            "context_query_combined": "When will Vince J Kaminski's assistant contact Shane Green to arrange interviews in June 2000?",
+            "answer": "My assistant will contact you Wednesday to arrange the interviews.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1797",
+            "subject": "RE: Wire Info",
+            "timestamp": 1010654751,
+            "date": "2002-01-10 04:25:51",
+            "from": "Zisman, Stuart SZISMAN",
+            "to": "['Laborde', 'John Jlaborde', 'Musch', 'Susan Smusch', 'Shackleton', 'Sara Sshackl']",
+            "body": "Susan can you confirm?  If so, what is the Goldman account for?\nStuart R. Zisman"
+        },
+        "eval_gen_agent_output": {
+            "query": "What is the Goldman account for?",
+            "context_query_from": "Can Susan confirm what the Goldman account is?",
+            "context_query_date": "Can Susan confirm what the Goldman account is for in January 2002?",
+            "context_query_combined": "Can Susan confirm what the Goldman account is for from Stuart Zisman in January 2002?",
+            "answer": "The Goldman account is not specified in the email.",
+            "specificness": 1,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1411",
+            "subject": "TBG",
+            "timestamp": 1004623374,
+            "date": "2001-11-01 09:02:54",
+            "from": "Vickers, Frank FVICKER",
+            "to": "['Kitchen', 'Louise Lkitchen']",
+            "body": "Louise, I ran into John and he asked for a recap on TBG.  He has some history with this account and was aware of my direction.  Bottom line - he asked that I come by tomorrow to discuss.  I am fine with your instructions to put this on hold.  I will not move to get with John until you approve.\n\nFrank"
+        },
+        "eval_gen_agent_output": {
+            "query": "What did John ask Frank about TBG?",
+            "context_query_from": "Louise, what did John ask Frank about TBG?",
+            "context_query_date": "In November 2001, what did John ask Frank about TBG?",
+            "context_query_combined": "Louise, in November 2001, what did John ask Frank about TBG?",
+            "answer": "John asked for a recap on TBG.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1914",
+            "subject": "RE: Friday Festivities",
+            "timestamp": 1012484990,
+            "date": "2002-01-31 08:49:50",
+            "from": "Richey, Cooper CRICHEY",
+            "to": "[\"'Jai Hawker <JHawker@petersco.com>@ENRON'\"]",
+            "body": "its a boring exchange - its hard to get motivated.  i thought i would be on the one a day plan\n\nbitch, i could barely open the doors on the way back.\n\n -----Original Message-----\nFrom: \tJai Hawker <JHawker@petersco.com>@ENRON  \nSent:\tThursday, January 31, 2002 2:06 PM\nTo:\tRichey, Cooper\nSubject:\tFW: Friday Festivities\n\nThis sounds good dude, but you should push her a touch to see if there's any\ninterest.  Reply an hour after you get one - see what happens.  I'm\ncertainly not saying don't lose your mind like I've clearly done.  Aren't\nyou curious?\n\n-----Original Message-----\nFrom: Richey, Cooper [mailto:Cooper.Richey@ENRON.com]\nSent: Thursday, January 31, 2002 11:01 AM\nTo: jhawker@petersco.com\nSubject: FW: Friday Festivities\n\n\n\n\n>  -----Original Message-----\n> From: \tJill Dunlop <JillD@cnrl.com>@ENRON\n> Sent:\tThursday, January 31, 2002 7:59 AM\n> To:\tRichey, Cooper\n> Subject:\tRE: Friday Festivities\n>\n>\n> Good morning Cooper!\n> I've been at work for almost an hour and the synapses are still refusing\nto jump.  So, a short e-mail break is needed.\n> No, I didn't wind up going to see Black Hawk Down.  My parents are in town\nfrom Kuwait so I've been spending time with them.  They've gone soft since\ngoing over to Kuwait.  I don't thing I've ever seen two colder people in my\nlife.\n> Of COURSE I know Ian Cooke.  I hear he sits right by you at work.  You'll\nhave to tell him I say hi.\n> I don't think this weekend is going to be a very exciting one on my part.\nMy dad's leaving on Sunday so I'll be doing the family thing most of the\ntime.  Emmy said they're thinking of going to Bass Brothers tomorrow and I\nthink I'll try to go for a couple.  You coming?\n> Anyway, I should probably think about working.  Talk to you soon.\n> Jill\n> -----Original Message-----\n> From:   Cooper.Richey@enron.com [SMTP:Cooper.Richey@enron.com]\n> Sent:   January 30, 2002 3:26 PM\n> To:     JillD@cnrl.com\n> Subject:        RE: Friday Festivities!\n>\n> did you see black hawk down?  i didn't like it that much, but i read the\n> book awhile ago (really good) and its a hard subject to make a movie\nabout.\n> my brother is in the special forces, so it's scary to think he could be\none\n> of those guys.\n>\n> just finished playing squash with ian cooke  i'm guessing you know him\ntoo?\n>\n> i have so little to do at work these days, its hard to be motivated, but i\n\n> suppose i could have worse things to complain about.  what movies did you\n> rent? sorry if i'm nosy, but see previous sentence.\n>\n>      - c -\n>\n>     -----Original Message-----\n>    From:   Jill Dunlop <JillD@cnrl.com>@ENRON\n>    Sent:   Monday, January 28, 2002 4:31 PM\n>    To:     Richey, Cooper\n>    Subject:  RE: Friday Festivities!\n>\n>    Hi Cooper,\n>    Friday night is always a good one.  This was a little better then some,\n\n>    however, my Saturday morning made me regret the increase in the fun\n>    factor.\n>    My Saturday night makes your Friday look like a huge shaker.  I rented\n>    movies and rarely left my couch.  I haven't had a Saturday like that in\n\n>    months but its nice to take it easy once in a while.\n>    How's Black Hawk Down?  I was going to see it tomorrow.\n>    Have a good night.\n>    Jill\n>      -----Original Message-----\n>      From:   Cooper.Richey@enron.com [SMTP:Cooper.Richey@enron.com]\n>      Sent:   January 28, 2002 11:37 AM\n>      To:     JillD@cnrl.com\n>      Subject:        RE: Friday Festivities!\n>\n>      Hi Jill,\n>\n>      how was ceili's?\n>\n>      i ended up going home and taking a nap and then going to see black\n>      hawk\n>      down.  i think i was in bed by 10:30...  i'm sure you had more fun\n>      than me.\n>      overall, my w/e was fairly uneventful. you?\n>\n>      should go another time.\n>\n>      cooper\n>\n>          -----Original Message-----\n>         From:   Jill Dunlop <JillD@cnrl.com>@ENRON\n>         Sent:   Friday, January 25, 2002 11:54 AM\n>         To:     Richey, Cooper\n>         Subject:  Friday Festivities!\n>\n>         Hey Cooper,\n>         I wanted to thank you again for asking Emily and I to the wine\n>      tasting\n>         last night.  I had a great time (or as much fun as an uncultured\n>      Calgary\n>         hick can have) and think we should all do it again soon.\n>         Also, I have been enlisted by Emmy to make sure you are coming to\n>         Ceili's tonight.  She didn't get a chance to write this morning\nbut\n>         wanted to extend the invitation to you one more time.  She won't\nbe\n>      done\n>         until 5 and so I think we'll head over around then.\n>         Ah Ha!  Lunch time!  Hope to see you tonight and have a good rest>\n\n>      of\n>         your day.\n>         Jill\n>         Jill Dunlop\n>         Canadian Natural Resources Limited\n>         Gas Operations Coordinator\n>         Phone: 517-6803\n>         Fax: 517-7365\n>\n>\n**********************************************************************\n>      This e-mail is the property of Enron Corp. and/or its relevant\n>      affiliate and may contain confidential and privileged material for\nthe\n>      sole use of the intended recipient (s). Any review, use, distribution\n\n>      or disclosure by others is strictly prohibited. If you are not the\n>      intended recipient (or authorized to receive for the recipient),\n>      please contact the sender or reply to Enron Corp. at\n>      enron.messaging.administration@enron.com and delete all copies of the\n\n>      message. This e-mail (and any attachments hereto) are not intended to\n\n>      be an offer (or an acceptance) and do not create or evidence a\nbinding\n>      and enforceable contract between Enron Corp. (or any of its\n>      affiliates) and the intended recipient or any other party, and may\nnot\n>      be relied on by anyone as the basis of a contract by estoppel or\n>      otherwise. Thank you.\n>\n>\n**********************************************************************\n>\n> "
+        },
+        "eval_gen_agent_output": {
+            "query": "What did Jill Dunlop think about her weekend plans?",
+            "context_query_from": "Richey, Cooper CRICHEY asked about Jill Dunlop's weekend plans. What did she think about them?",
+            "context_query_date": "In January 2002, what did Jill Dunlop think about her weekend plans?",
+            "context_query_combined": "Richey, Cooper CRICHEY asked about Jill Dunlop's weekend plans in January 2002. What did she think about them?",
+            "answer": "Jill mentioned that she didn't think her weekend was going to be very exciting because her dad was leaving on Sunday and she would be doing the family thing most of the time.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "732",
+            "subject": "Tennis",
+            "timestamp": 977107980,
+            "date": "2000-12-17 21:53:00",
+            "from": "Elizabeth Sager",
+            "to": "['Charlotte Kraham']",
+            "body": "Thanks for your message - sorry to hear your schedule ( I thought mine was \nbad).  No problem from my side not playing until 2001 - let's talk that first \nweek and arrange a time.  Hope you have a great holiday in NY."
+        },
+        "eval_gen_agent_output": {
+            "query": "When can we arrange a time to play tennis in 2001?",
+            "context_query_from": "Elizabeth Sager mentioned arranging a time to play tennis in 2001. When can we arrange a time?",
+            "context_query_date": "Elizabeth Sager mentioned arranging a time to play tennis in December 2000. When can we arrange a time?",
+            "context_query_combined": "Elizabeth Sager mentioned arranging a time to play tennis in December 2000. When can we arrange a time?",
+            "answer": "Let's talk that first week of January and arrange a time.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1104",
+            "subject": "Brent",
+            "timestamp": 974164440,
+            "date": "2000-11-13 20:14:00",
+            "from": "Becky Spencer",
+            "to": "['Mark Taylor', 'Robert Bruce', 'Andrea Calo', 'Mary Cook', 'Anne C Koehler', 'Sara Shackleton', 'Susan Bailey', 'Samantha Boyd', 'Tana Jones', 'Stephanie Panus']",
+            "body": "Brent didn't get much sleep last night and is still under the weather.  He \nwill be working from home today.  You can get in touch with him via e-mail at \n\"bhendry@houston.rr.com\" or fax him at 832-249-8654."
+        },
+        "eval_gen_agent_output": {
+            "query": "Why is Brent working from home today?",
+            "context_query_from": "Why is Brent working from home today as mentioned by Becky Spencer?",
+            "context_query_date": "Why is Brent working from home today as mentioned in November 2000?",
+            "context_query_combined": "Why is Brent working from home today according to Becky Spencer in November 2000?",
+            "answer": "Brent didn't get much sleep last night and is still under the weather.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1810",
+            "subject": "Passwords",
+            "timestamp": 979866540,
+            "date": "2001-01-18 20:09:00",
+            "from": "Ina Rangel",
+            "to": "['Julie Pechersky']",
+            "body": "Julie,\n\nCan you please make sure John receives these passwords?\n\nIna\n---------------------- Forwarded by Ina Rangel/HOU/ECT on 01/19/2001 09:13 AM \n---------------------------\n\n\nJohn Griffith@ENRON\n01/19/2001 09:09 AM\nTo: Ina Rangel/HOU/ECT@ECT\ncc:  \nSubject: \n\nHave you heard anything on my login and password for Bridge/Telerate?  Thanks.\n\nJohn\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "Who should receive the passwords mentioned in the email?",
+            "context_query_from": "Ina Rangel asked Julie to ensure that John receives the passwords mentioned in the email. Who should receive the passwords?",
+            "context_query_date": "Ina Rangel asked Julie to ensure that John receives the passwords mentioned in the email in January 2001. Who should receive the passwords?",
+            "context_query_combined": "Ina Rangel asked Julie to ensure that John receives the passwords mentioned in the email in January 2001. Who should receive the passwords?",
+            "answer": "John",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1316",
+            "subject": "UT",
+            "timestamp": 968299380,
+            "date": "2000-09-07 00:03:00",
+            "from": "Eric Bass",
+            "to": "['Timothy Blanchard']",
+            "body": "i reserved an extra room - but we can cancel at any time before 6 tomorrow\n\nlet em know about val\n\n\nTo: Matthew Lenhart/HOU/ECT@ECT\ncc: Eric Bass/HOU/ECT@ECT \nSubject: Re: UT  \n\nWho's driving and how many cars are we taking?\n\n\nTo: Timothy Blanchard/HOU/EES@EES\ncc: Eric Bass/HOU/ECT@ECT \nSubject: Re: UT  \n\nif shirley hasn't left town yet i think i can get him a ticket.  let him come \neven if nobody back out anyway.  it doesn't matter squeezing 1 more person \ninto the room.\n\n\n\n\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "What is the cancellation policy for the extra room reserved?",
+            "context_query_from": "Eric Bass mentioned an extra room reserved. What is the cancellation policy for it?",
+            "context_query_date": "Eric Bass mentioned an extra room reserved in September 2000. What is the cancellation policy for it?",
+            "context_query_combined": "Eric Bass mentioned an extra room reserved in September 2000. What is the cancellation policy for it?",
+            "answer": "We can cancel at any time before 6 tomorrow.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "737",
+            "subject": "RE: Paper Situation",
+            "timestamp": 1010558471,
+            "date": "2002-01-09 01:41:11",
+            "from": "Buehler, Craig CBUEHLE",
+            "to": "['Green', 'Alma Agreen1', 'Brostad', 'Karen Kbrosta', 'Carter', 'Zuela Zcarter', 'Dasilva', 'Esther Edasilv', 'Eldridge', 'Dale Deldrid2', 'Hanagriff', 'Richard Rhanagr', 'Kuehl', 'Toby Tkuehl', 'Laferla', 'Lynda  Llaferl', 'Lee', 'Dennis Dlee', \"'Rick Dietz' <Rick Dietz @ enron.com\", 'Schoolcraft', 'Darrell Dschool', 'Vasquez', 'Josue Jvasquez', 'Bodnar', 'Michael Mbodnar']",
+            "body": "\nWe have your toaster!!!  You'll get it back when our demands are met.\nLeave 4 boxes of 8 1/2 x 11 paper (no damn 3 hole punch paper either)\nunder the TV on the west end of the 39th floor and you'll be toasting\naway within a few hours.  This isn't from Craig; we've hacked into his\nemail...\n\nEnron People's Liberation Front (EPLF)...\n\n\n\n-----Original Message-----\nFrom: Green, Alma \n\n\nGetting paper for the floor is out of my hands.  I have had three calls this morning plus a note left on my desk to order paper.\nDonna Scott is working with the mail room. \n\nOur toaster that Rick Dietz bought when we moved down here is missing this A.M.  Has been reported to Facilities who will report to Security.  If anyone knows anything, would you please let me know!\n\n\tTnx, Alma G.\n  "
+        },
+        "eval_gen_agent_output": {
+            "query": "What do I need to leave to get my toaster back?",
+            "context_query_from": "What do I need to leave to get my toaster back according to Craig Buehler's email?",
+            "context_query_date": "What do I need to leave to get my toaster back in January 2002?",
+            "context_query_combined": "What do I need to leave to get my toaster back according to Craig Buehler's email in January 2002?",
+            "answer": "Leave 4 boxes of 8 1/2 x 11 paper under the TV on the west end of the 39th floor.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "872",
+            "subject": "Northern Illinois Gas Company/Nicor Gas Company",
+            "timestamp": 967006500,
+            "date": "2000-08-23 00:55:00",
+            "from": "Adnan Patel",
+            "to": "['Tana Jones']",
+            "body": "This should help clarify a lot of things, thanks Tana for the Certificate of \nassumed name.\n\nThe receipt of the assumed name certificate from the State of Illinois proves \nthat Northern Ilinois Gas Company is an active Corporation (set up in GCP as \na HQ company) with Nicor Gas Company as their assumed name (Set up in GCP as \na tradename). Seems like in Global Counterparty both the counterparties are \nset up exactly the way it should be. The request below is to change the \ntradename's name from Nicor Gas Company to Northen Ilinois Gas Company dba \nNicor Gas Company, which I don't have any documentation or instructions for. \nUpon my conversation with Sandy Allison, Attorney Nicor Gas at Ph (630) \n983-8676 x2882 all the contracts and legal binding documents should carry the \nname Nicor Gas Company, and so does the Assumed Name Certificate says. In \naddition, Marcia Nawrocki, Attorney Nicor Gas on her fax cover sheet attached \nwith the Certificate, instructed to \"use NICOR GAS COMANY\".\n\nIn lieu of the above facts, Global Counterparty does not feel necessary to \nmake any changes in its database. \nRegards!\n\nAdnan Patel\nx58335\n\n\n\nFrom: Tana Jones@ECT on 08/23/2000 08:49 AM\nTo: Stacey Richardson/HOU/ECT@ECT\ncc: Adnan Patel/Corp/Enron@ENRON, Anthony Campos/HOU/ECT@ECT \nSubject: Re: Northern Illinois Gas Company/Nicor Gas Company  \n\nSusan Bailey, the paralegal working on this master, spoke to the Company \nafter receiving these emails.  They faxed to her a copy of the assumed  name \ncertificate wherein Northern Illinois Gas Company transacts business under \nthe name Nicor Gas Company.  Per her conversations they have not changed \ntheir name, they are only operating under the assumed name Nicor Gas \nCompany.  Being so, the online account would have to be renamed as Northern \nIllinois Gas company dba Nicor Gas Company.  Per my conversation with Stacy \nDickson, a physical gas lawyer, they still transact physical gas under their \nmaster with Northern Illinois Gas Company.  I will have a copy of the assumed \nname certificate walked down to Adnan.  If we are all in agreement after \nthis, it seems like we need two counterparty names \"Northern Illinois Gas \nCompany\" and \"Northern Illinois Gas Company dba Nicor Gas Company\".  Upon \nreceipt of the assumed name certificate, please confirm your agreement and I \nwill contact Credit and the Online team.\n\n\n\n\tStacey Richardson\n\t08/17/2000 04:49 PM\n\t\t\n\t\t To: Adnan Patel/Corp/Enron@ENRON\n\t\t cc: Tana Jones/HOU/ECT@ECT, Stacy E Dickson/HOU/ECT@ECT, Tom \nMoran/HOU/ECT@ECT, Frank L Davis/HOU/ECT@ECT, Stephanie Sever/HOU/ECT@ECT, \nMary G Gosnell/HOU/ECT@ECT, Bill D Hare/HOU/ECT@ect, Linda S \nBryan/HOU/ECT@ECT, Bridgette Anderson/Corp/Enron@ENRON, Susan \nBailey/HOU/ECT@ECT, Karen Lambert/HOU/ECT@ECT, Anthony Campos/HOU/ECT@ECT\n\t\t Subject: Re: Northern Illinois Gas Company/Nicor Gas Company\n\nOK, guys, based on Adnan's information from the counterparty, all contracts \nunder Northern Illinois Gas Company will be changed (via name overlay) to \nNicor Gas Company once Adnan has received the proper name change \ndocumentation.   Since no changes have been made in GCP to correct the HQ \ncompany and trade name relationships, the recent ISDA contract was set up \nunder Nicor Gas Company.  Once these changes are made in GCP, the contract \ncan be changed to the trade name if still needed at that time.\n\nI apologize for all the confusion and hope this helps all parties concerned.\n\nThanks,\nStacey\n\n\n\nAdnan Patel@ENRON on 08/17/2000 04:20:24 PM\nTo: Tana Jones/HOU/ECT@ECT\ncc: Stacy E Dickson/HOU/ECT@ECT, Tom Moran/HOU/ECT@ECT, Frank L \nDavis/HOU/ECT@ECT, Stephanie Sever/HOU/ECT@ECT, Mary G Gosnell/HOU/ECT@ECT, \nStacey Richardson/HOU/ECT@ECT, Bill D Hare/HOU/ECT@ect, Linda S \nBryan/HOU/ECT@ECT, Bridgette Anderson/Corp/Enron@ENRON, Susan \nBailey/HOU/ECT@ECT \nSubject: Re: Northern Illinois Gas Company/Nicor Gas Company  \n\nPer my conversation with Nicor Gas Company's attorney, Northern Illinois Gas \nCompany changed its name to Nicor Gas Company. Therefore, Nicor Gas Company \nis the only entity that all the deals needs to be booked under. However, the \nattorney also agreed to the fact that they do use the name \"Northern Illinois \nGas Company d/b/a Nicor Gas Company\" eversince the name change happened. He \nsaid they had been using both names \"contractually\" and interchangeably even \nthough it is all just ONE company, one state registered company.\n\nI'm currently waiting on name change documents, however this is what it looks \nlike thats going to happen:\nThe main HQ company would end up being NICOR GAS COMPANY with all the \ntrades/contracts/deals being merged into one record. However, if need be we \ncould have a Tradename set up as \"Northern Illinois Gas Company d/b/a Nicor \nGas Company\" since this is how the company does business as, in some cases.\n\nNicor's legal Dept could be reached at (630) 983-8676 for any further \nclarifications in this matter.\n\nAdnan Patel\nGlobal Counterparty\nx58335\n\n\n\nFrom: Tana Jones@ECT on 08/17/2000 03:47 PM\nTo: Stacy E Dickson/HOU/ECT@ECT, Tom Moran/HOU/ECT@ECT\ncc: Frank L Davis/HOU/ECT@ECT, Stephanie Sever/HOU/ECT@ECT, Adnan \nPatel/Corp/Enron@ENRON \nSubject: Northern Illinois Gas Company/Nicor Gas Company\n\nThere appears to be confusion over who and what products we should be trading \nwith these entities.\n\nWe have an ISDA Master Agreement in place with Northern Illinois Gas Company \nd/b/a Nicor Gas Company.  This is a new master.  If the counterparty is not \nset up this way it need to be.\n\nPhysical gas has a master in place with Northern Illinois Gas Company.\n\nThere is no master agreement in place with Nicor Gas Company and the only \ntrading being done with this entity is online gas trading.\n\nThe issue that needs to be resolved is whether we want to trade gas under \nboth Northern Illinois Gas Company and Nicor Gas Company.  Frank Davis will \nresolve this issue with Tom Moran in Credit and Stacy Dickson with physical \ngas Legal, and they will let us know who we should be trading with.\n\nWhen we hear back from them we can finally resolve what counterparty names we \nwant to set up and get back to the counterparty if we have not received the \ncorrect Password Application to match out intended trading partners.\n\nSorry for all the confusion this is causing.  I am confused too.\n\n\n\n\n\n\n\n\n\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "What changes are being requested for the name of the tradename associated with Northern Illinois Gas Company?",
+            "context_query_from": "Adnan Patel mentioned the requested changes for the name of the tradename associated with Northern Illinois Gas Company. What are those changes?",
+            "context_query_date": "In August 2000, Adnan Patel mentioned the requested changes for the name of the tradename associated with Northern Illinois Gas Company. What are those changes?",
+            "context_query_combined": "In August 2000, Adnan Patel mentioned the requested changes for the name of the tradename associated with Northern Illinois Gas Company. What are those changes?",
+            "answer": "The request is to change the tradename's name from Nicor Gas Company to Northern Illinois Gas Company dba Nicor Gas Company.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "850",
+            "subject": "Gas Management Agreement",
+            "timestamp": 974774160,
+            "date": "2000-11-20 21:36:00",
+            "from": "Sandi M Braband",
+            "to": "['Garrick Hill', 'Daren J Farmer']",
+            "body": "Attached is the red lined draft of the Gas management Agreement with the \nchanges we discussed. Please review and give me your comments. If you can \nsupply any of the needed Notice info in Section 8 please let me know---\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "What changes were made to the Gas Management Agreement?",
+            "context_query_from": "Sandi M Braband sent an email regarding the changes made to the Gas Management Agreement. What were those changes?",
+            "context_query_date": "In November 2000, there was a discussion about the changes made to the Gas Management Agreement. What were those changes?",
+            "context_query_combined": "Sandi M Braband sent an email in November 2000 regarding the changes made to the Gas Management Agreement. What were those changes?",
+            "answer": "The changes discussed are reflected in the attached red lined draft of the Gas Management Agreement.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1529",
+            "subject": "RE: Verifier Training",
+            "timestamp": 1012218851,
+            "date": "2002-01-28 06:54:11",
+            "from": "Ratliff, Dale DRATLIF",
+            "to": "['Schoolcraft', 'Darrell Dschool', 'Spraggins', 'Gary Gspragg', 'Graves', 'Jerry Jgraves', 'Shafer', 'Allen Notesaddr/cn=cbe9c022-ca8fb1a6-86256727-582a54']",
+            "body": "The Verifier Training will be held in EB42C1 from 8:00am to 5:00pm on Thursday January 31, 2002.  If you have any questions call me at 713-853-1534\n\nDale\n\n -----Original Message-----\nFrom: \tRatliff, Dale  \nSent:\tThursday, January 17, 2002 10:56 AM\nTo:\tSchoolcraft, Darrell; Spraggins, Gary; Graves, Jerry; Shafer, Allen\nCc:\tJanuary, Steve; McPherson, Cliff\nSubject:\tRE: Verifier Training\n\nAfter talking with Cliff the later part of the week of January 28 will work out the best.  Please let me know if this will not work for anyone.\n\nDale\n\n -----Original Message-----\nFrom: \tJanuary, Steve  \nSent:\tTuesday, January 15, 2002 5:28 PM\nTo:\tRatliff, Dale; McPherson, Cliff\nCc:\tSchoolcraft, Darrell; Spraggins, Gary; Graves, Jerry; Shafer, Allen\nSubject:\tFW: Verifier Training\n\nDale, please co-ordinate a meeting with Cliff, yourself, and the others copied on this list as soon as practicle. Allen, can you come to Houston to attend the meeting? I'd like to get this program going right away. thanks. sj\n\n -----Original Message-----\nFrom: \tMcPherson, Cliff  \nSent:\tTuesday, January 15, 2002 4:38 PM\nTo:\tJanuary, Steve; Bryant, Mike; Freeman, John\nCc:\tJeffers, Joe\nSubject:\tVerifier Training\n\nGentlemen,\nIn preparation to comply with the Operator Qualification Rule, we need to schedule a training session for your OQ evaluators.  I know that you have reviewed the SBP Verifier Training CBT module, but we think that a better approach for non-SBP personnel would be a live trainer who can present the responsibilities of the evaluator from the perspective of the OQ rule.  The instructor we have in mind has a very good understanding of both the regulatory requirements of OQ and the process of skills evaluation.\n\nI expect this training session to take no more than a day.  Please let me know a couple of dates when this class could be presented to the personnel of your choice.  Once we know how many people and when to schedule classes, we'll contact the instructor.  (Trainer is not available the last week of February and the first week of March)   Please reply within the next week so that we can reserve time on the instructor's schedule.\n\nCall if you have questions or concerns.  (713-345-6857)"
+        },
+        "eval_gen_agent_output": {
+            "query": "What are the details for the Verifier Training session?",
+            "context_query_from": "What are the details for the Verifier Training session sent by Dale Ratliff?",
+            "context_query_date": "What are the details for the Verifier Training session scheduled for January 2002?",
+            "context_query_combined": "What are the details for the Verifier Training session sent by Dale Ratliff in January 2002?",
+            "answer": "The Verifier Training will be held in EB42C1 from 8:00am to 5:00pm on Thursday January 31, 2002.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "722",
+            "subject": "FW: Enron Said To Be Takeover Target, Shell Tipped As Possible\n Bidder",
+            "timestamp": 1004342952,
+            "date": "2001-10-29 03:09:12",
+            "from": "Murray, Kevin KMURRAY",
+            "to": "['Taylor', 'Michael E Mtaylor5']",
+            "body": "\n\n -----Original Message-----\nFrom: \tMarks, James  \nSent:\tMonday, October 29, 2001 10:01 AM\nTo:\tMurray, Kevin\nSubject:\tFW: Enron Said To Be Takeover Target, Shell Tipped As Possible Bidder\n\n\n\n -----Original Message-----\nFrom: \tCzuppon, Christopher  \nSent:\tMonday, October 29, 2001 9:55 AM\nTo:\tMarks, James\nSubject:\tFW: Enron Said To Be Takeover Target, Shell Tipped As Possible Bidder\n\n\n\nChris Czuppon\nEnron North America\nGeneration Investments\n(713) 345-8180\n\n -----Original Message-----\nFrom: \tKiani-Aslani, John  \nSent:\tMonday, October 29, 2001 9:51 AM\nTo:\tGrace Jr., James\nSubject:\tFW: Enron Said To Be Takeover Target, Shell Tipped As Possible Bidder\n\n\n\nEnron Said To Be Takeover Target, Shell Tipped As Possible Bidder\n> Oct. 28 (Power Finance & Risk)\n> Enron, which 12 months ago was the darling of the energy markets, has\n> become increasingly vulnerable to a takeover bid following the recent\n> collapse of its share price, according to bankers and analysts. Royal\n> Dutch/Shell is one likely bidder, they say, noting that Enron's relatively\n> modest market capitalization--down to $11.5 billion late last week from a\n> high of more than $55 billion--means that Shell and other potential\n> acquirers would have little trouble digesting it whole. Cerris Tavinor, a\n> spokeswoman for Shell, declined to comment. Calls to Enron were not\n> returned.\n> An M&A banker in London says the Anglo-Dutch oil giant was rumored to have\n> approached Enron unsuccessfully in August. An analyst in New York adds\n> Shell has courted Enron for more than three years. \"[Shell]'s downstream\n> power business InterGen has not been as successful as it and its partner\n> Bechtel hoped, especially in the U.S., and this would be a great fit,\" he\n> continues.\n> While many energy concerns would love to get their hands on Enron's hugely\n> successful gas and electricity trading business, its forays into water,\n> broadband and pulp and paper, might prove less attractive. Bidders may\n> want to cherry pick the best parts of the business, reasons Peter Fusaro,\n> president of Global Change Associates in New York. Still, he says \"there\n> is a distinct possibility that it could be bought outright.\"\n> Another obstacle to any sale is believed to be CEO Kenneth Lay's\n> unwillingness to sell the company at such a low stock price. Still, Lay\n> has already given up the executive reins once, and at 61, he would\n> probably be willing to sell if the premium was significantly rich, argues\n> one New York based banker. Another adds that Lay will probably wait for\n> the share price to recover before he would even consider talking to\n> bidders.\n> Bankers argue that potential bidders would be unwilling to ride roughshod\n> over Lay's wishes through a hostile bid as most of Enron's value is tied\n> up in intellectual capital. Hostile bidders run the risk that senior staff\n> will jump ship, argues a London banker.\n> Another obstacle to any bid is concern that Enron may have additional\n> skeletons in its financial closet. Last week's stock market selloff was\n> prompted by Enron unexpectedly writing off some $1.2 billion in equity\n> resulting from the termination of contracts with a special purpose vehicle\n> linked to Peter Fastow, cfo. Analysts fear that Enron may have to\n> terminate similar contracts over the next quarters.\n>"
+        },
+        "eval_gen_agent_output": {
+            "query": "Who is rumored to be a possible bidder for Enron?",
+            "context_query_from": "Murray, Kevin is discussing potential bidders for Enron. Who is rumored to be a possible bidder for Enron?",
+            "context_query_date": "In October 2001, there was a discussion about potential bidders for Enron. Who is rumored to be a possible bidder for Enron?",
+            "context_query_combined": "Murray, Kevin is discussing potential bidders for Enron in October 2001. Who is rumored to be a possible bidder for Enron?",
+            "answer": "Royal Dutch/Shell is one likely bidder.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "982",
+            "subject": "Conference Call - eNovate Legal Templates Masters, LC and\n Guarantees",
+            "timestamp": 971346060,
+            "date": "2000-10-12 06:21:00",
+            "from": "Dorothy Youngblood",
+            "to": "['Molly Harris', 'Gregg.Penman@enron.com', 'Jeffrey T Hodge', 'Sara Shackleton', 'Kay Mann']",
+            "body": "This memo will confirm the above referenced Conference Call has been arranged \nfor the date/time listed below:\n\n\n DATE:   Monday, 10/16/2000\n\n TIME:   2:00  P.M.- 3:00 P.M.\n\n DIAL-IN NUMBER: 1-888-422-7109\n\n HOST CODE:  409-555\n\n PARTICIPANTS \n  CODE:  381-755\n\n\n\nPlease let us know if there are any questions.\n\nThanks you.\n\nDorothy\n\n713-853-6114 \n\n\n\nParticipants:\n\n  Molly Harris - Host of Conference Call\n  Gregg Penman\n  Jeff Hodge\n  Sara Shackelton\n  Kay Mann"
+        },
+        "eval_gen_agent_output": {
+            "query": "What are the details of the conference call arranged by Dorothy Youngblood?",
+            "context_query_from": "What are the details of the conference call arranged by Dorothy Youngblood?",
+            "context_query_date": "What are the details of the conference call arranged in October 2000?",
+            "context_query_combined": "What are the details of the conference call arranged by Dorothy Youngblood in October 2000?",
+            "answer": "The conference call is scheduled for Monday, 10/16/2000, from 2:00 P.M. to 3:00 P.M.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "629",
+            "subject": "RW separations",
+            "timestamp": 971431920,
+            "date": "2000-10-13 06:12:00",
+            "from": "Michelle Cash",
+            "to": "['Catherine Huynh']",
+            "body": "Cathy, what do we want to do with regard to Paskoff?  Remember, we were \nwaiting until this week to respond to his requests for additional \nconsideration?  Please let me know.  Thanks.  Michelle"
+        },
+        "eval_gen_agent_output": {
+            "query": "What are we planning to do regarding Paskoff's requests?",
+            "context_query_from": "What are we planning to do regarding Paskoff's requests mentioned by Michelle Cash?",
+            "context_query_date": "What are we planning to do regarding Paskoff's requests mentioned in October 2000?",
+            "context_query_combined": "What are we planning to do regarding Paskoff's requests mentioned by Michelle Cash in October 2000?",
+            "answer": "We were waiting until this week to respond to his requests for additional consideration.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "247",
+            "subject": "Tigers",
+            "timestamp": 988778340,
+            "date": "2001-05-02 00:39:00",
+            "from": "Susan W Pereira",
+            "to": "['KKW816@aol.com @ ENRON']",
+            "body": "Kathy-\n\nThanks for the email.  Kali was not able to make last Sunday's game due to a \nschedule conflict that I had.  Plus, she will not go to the last game because \nher best friend's birthday party is at the same time.  I had her skip another \nfriend's party to make the one game she did participate in (all the softball \ngirls schedule their parties on Sunday so as not to conflict with those \ngames!!).  If it's not too late, do not order a trophy for her.  She really \nwas never much of a team participant.  I'm hoping her enthusiasm this fall \nwill be like last fall and not this spring.  Thanks for all your help, time \nand effort.\n\nSusan Pereira\n\nP.S.-\nDo you know who some of the U10 girls coaches will be??  Will you be \ncoaching?  I did not sign up to coach because I may asst. coach my son's U6 \nteam."
+        },
+        "eval_gen_agent_output": {
+            "query": "What is the reason Kali missed last Sunday's game?",
+            "context_query_from": "Susan W Pereira mentioned that Kali missed last Sunday's game. What is the reason for her absence?",
+            "context_query_date": "Susan W Pereira mentioned that Kali missed last Sunday's game in May 2001. What is the reason for her absence?",
+            "context_query_combined": "Susan W Pereira mentioned that Kali missed last Sunday's game in May 2001. What is the reason for her absence?",
+            "answer": "Kali missed last Sunday's game due to a schedule conflict that Susan had.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1502",
+            "subject": "Commission Agenda",
+            "timestamp": 1015491057,
+            "date": "2002-03-07 03:50:57",
+            "from": "Butler, Janet JBUTLER",
+            "to": "['Hyatt', 'Kevin Khyatt', 'Lindberg', 'Lorraine Llindbe']",
+            "body": "\nHeads up for next public Commission meeting (3/13). The El Paso docket you are interested in is on the agenda. RP00-336. \n\nhttp://www.ferc.gov/public/isd/sunshine.htm\n\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "What is the docket number for the El Paso case on the agenda?",
+            "context_query_from": "What is the docket number for the El Paso case on the agenda mentioned by Janet Butler?",
+            "context_query_date": "What is the docket number for the El Paso case on the agenda mentioned in March 2002?",
+            "context_query_combined": "What is the docket number for the El Paso case on the agenda mentioned by Janet Butler in March 2002?",
+            "answer": "RP00-336",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "344",
+            "subject": "Missing Trade for 11-30-00",
+            "timestamp": 975571020,
+            "date": "2000-11-30 02:57:00",
+            "from": "Kate Symes",
+            "to": "['Evelyn Metoyer']",
+            "body": "Sean and Diana do not recognize this deal. They tried to check with the \nbrokers, but couldn't get a hold of anyone. I'll let you know first thing in \nthe morning whether or not this is good and what the deal number is.\n\nKate\n\n\n\n\nEvelyn Metoyer@ENRON\n11/30/2000 03:08 PM\nTo: Kate Symes/PDX/ECT@ECT\ncc:  \n\nSubject: Missing Trade for 11-30-00\n\nPrebon sent over a confirmation for the following trade for Sean Crandall\nEnron buys from Aquila January  Mid-C 25 mw at $300.00\n\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "What did Sean and Diana try to do regarding the deal they don't recognize?",
+            "context_query_from": "Sean and Diana tried to check with the brokers regarding the deal they don't recognize. What did they try to do?",
+            "context_query_date": "On November 30, 2000, Sean and Diana tried to check with the brokers regarding the deal they don't recognize. What did they try to do?",
+            "context_query_combined": "On November 30, 2000, Sean and Diana tried to check with the brokers regarding the deal they don't recognize. What did they try to do?",
+            "answer": "They tried to check with the brokers, but couldn't get a hold of anyone.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "644",
+            "subject": "FW: ONE WEEK till Pajama Pub Crawl",
+            "timestamp": 968231820,
+            "date": "2000-09-06 05:17:00",
+            "from": "Matthew Lenhart",
+            "to": "['\"Marcantel MM (Mitch)\" <MMMarcantel@equiva.com> @ ENRON']",
+            "body": "you going?  if it is next weekend sign me up."
+        },
+        "eval_gen_agent_output": {
+            "query": "Is the Pajama Pub Crawl happening next weekend?",
+            "context_query_from": "Matthew Lenhart asked if the Pajama Pub Crawl is happening next weekend. Is it?",
+            "context_query_date": "Is the Pajama Pub Crawl happening next weekend in September 2000?",
+            "context_query_combined": "Matthew Lenhart asked if the Pajama Pub Crawl is happening next weekend in September 2000. Is it?",
+            "answer": "Yes, it is next weekend.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1268",
+            "subject": "Panda Energy",
+            "timestamp": 983244720,
+            "date": "2001-02-26 22:32:00",
+            "from": "Ben Jacoby",
+            "to": "['Kathleen Carnahan', 'Fred Mitro', 'Stephen Thome', 'Christopher F Calger', 'Kay Mann', 'Chris Booth']",
+            "body": "Folks:\n\nI just got off the phone with Lee Johnson at GE. I described the overall deal \nto him (\"Intergen\" style deal with the current 4 LV Cogen units, and a \npurchase of 4 additional units as a replacement), but did not disclose that \nthe counterparty is Panda. Lee is totally on board, and thought this would be \na great transaction. Based on this, I think our GE risk is minimal, which \nmeans that our primary commercial focus needs to be on making sure Panda is \nprepared to transact, and if they remain as interested, making sure we \nproceed with as simple a transaction as possible.\n\nI would suggest that we have an all hands conference call to discuss the \ntransaction as soon as possible.\n\nFred-could you please contact everyone and set this up? I'm available all day \ntoday, and tomorrow to 3 PM EST.\n\nAs soon as I get the revised proposal from Lee, I will forward it to the \ngroup.\n\nRegards,\n\nBen"
+        },
+        "eval_gen_agent_output": {
+            "query": "What was the overall deal discussed with Lee Johnson at GE?",
+            "context_query_from": "What was the overall deal discussed with Lee Johnson at GE in the email from Ben Jacoby?",
+            "context_query_date": "What was the overall deal discussed with Lee Johnson at GE in February 2001?",
+            "context_query_combined": "What was the overall deal discussed with Lee Johnson at GE in the email from Ben Jacoby in February 2001?",
+            "answer": "An 'Intergen' style deal with the current 4 LV Cogen units, and a purchase of 4 additional units as a replacement.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "132",
+            "subject": "Equity Swap Confirm",
+            "timestamp": 986953980,
+            "date": "2001-04-10 21:53:00",
+            "from": "Jorge A Garcia",
+            "to": "['Sara Shackleton']",
+            "body": "Here is the final version of Annex II. \n\nHave a great day!\n\nJAG\n\n\n\n\nFrom: Sara Shackleton@ECT on 04/11/2001 08:47 AM\nTo: Jorge A Garcia/NA/Enron@ENRON\ncc:  \n\nSubject: Re: Equity Swap Confirm  \n\nNot yet.\nPlease send final version of Annex II.\n\nSara Shackleton\nEnron North America Corp.\n1400 Smith Street, EB 3801a\nHouston, Texas  77002\n713-853-5620 (phone)\n713-646-3490 (fax)\nsara.shackleton@enron.com\n\n\n\n\tJorge A Garcia@ENRON\n\t04/11/2001 08:40 AM\n\t\t\n\t\t To: Sara Shackleton/HOU/ECT@ECT\n\t\t cc: \n\t\t Subject: Re: Equity Swap Confirm\n\nGood Morning Sara,\n\nThanks for the e-mail. Have you had an opportunity to review the optional \ntermination language for the West LB Interest Rate Swap Confirmation? \n\nPlease advise.\n\nEnjoy your day!\n\nJorge\n\n\nFrom: Sara Shackleton@ECT on 04/11/2001 08:29 AM\nTo: Jorge A Garcia/NA/Enron@ENRON\ncc:  \n\nSubject: Re: Equity Swap Confirm  \n\nJorge:  The attached confirmation looks fine.  However, you did not attach \nAnnex II which is referenced all over the confirmation. \nFor future reference, \"Calculation Period(s)\" should be used for multiple \nperiods.  \n\nSara Shackleton\nEnron North America Corp.\n1400 Smith Street, EB 3801a\nHouston, Texas  77002\n713-853-5620 (phone)\n713-646-3490 (fax)\nsara.shackleton@enron.com\n\n\n\n\tJorge A Garcia@ENRON\n\t04/06/2001 03:03 PM\n\t\t \n\t\t To: Sara Shackleton/HOU/ECT@ECT\n\t\t cc: \n\t\t Subject: Equity Swap Confirm\n\nThere were a couple of cosmetic changes. This is it! Disregard the previous \nattachment.\n\nJAG\n\n\n\n\n\n\n\n\n\n\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "What is the final version of Annex II?",
+            "context_query_from": "Jorge A Garcia mentioned the final version of Annex II in his email. What is it?",
+            "context_query_date": "In April 2001, Jorge A Garcia mentioned the final version of Annex II in his email. What is it?",
+            "context_query_combined": "In April 2001, Jorge A Garcia mentioned the final version of Annex II in his email. What is it?",
+            "answer": "Here is the final version of Annex II.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "1482",
+            "subject": "??",
+            "timestamp": 974247540,
+            "date": "2000-11-14 19:19:00",
+            "from": "Drew Fossum",
+            "to": "['Frank Bay']",
+            "body": "Sorry you weren't able to join my hunting boondoggle in SoDak!  It was epic.  \nLots of birds (the wild variety, not pen raised and tied down like at \nPheasant Haven!)  We saw literally 1500-2000 birds over three days of \nhunting, and limited out every day.  Got my first double--two shots, two \nbirds, nothun' but net.  You gonna be at the mgt conf?  I'd love to get \ncaught up with you and share some new tales of woe from the pipeline \ngroup.    PS, I met Angie Green yesterday--very sharp young lady.  She said \nto say hi to you and Nicole.  Adios.  DF  "
+        },
+        "eval_gen_agent_output": {
+            "query": "What happened during the hunting boondoggle in SoDak?",
+            "context_query_from": "Drew Fossum shared details about the hunting boondoggle in SoDak. What happened during it?",
+            "context_query_date": "Drew Fossum shared details about the hunting boondoggle in November 2000. What happened during it?",
+            "context_query_combined": "Drew Fossum shared details about the hunting boondoggle in November 2000. What happened during it?",
+            "answer": "It was epic with lots of birds, seeing literally 1500-2000 over three days, and they limited out every day.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "725",
+            "subject": "Datren Williams Acceptance",
+            "timestamp": 971343120,
+            "date": "2000-10-12 05:32:00",
+            "from": "Vince J Kaminski",
+            "to": "['Carol Coats']",
+            "body": "Carol,\n\nThanks.\n\nVince\n\n\n\n\n\n\tCarol Coats\n\t10/12/2000 04:09 PM\n\t\nTo: Vince J Kaminski/HOU/ECT@ECT\ncc: Stinson Gibner/HOU/ECT@ECT \nSubject: Re: Datren Williams Acceptance\n  \n\nYou are right, Vince....Celeste and I did discuss it, and she approved his \nFeb. start date.\nDatren does know about that, so it sounds like it is cleared up.\n\nThanks so much, and we are sorry for the confusion!\nCarol\n\n\n\n\nVince J Kaminski\n10/12/2000 03:58 PM\nTo: Stinson Gibner/HOU/ECT@ECT\ncc: Carol Coats/HOU/ECT@ECT \nSubject: Re: Datren Williams Acceptance\n  \n\nStinson,\n\nI think it's a mistake. It  should be February.\n\nVince\n\n\n\n\n\nStinson Gibner\n10/10/2000 08:11 PM\nTo: Vince J Kaminski/HOU/ECT@ECT\ncc:  \nSubject: Datren Williams Acceptance\n\n\nFYI\n\n---------------------- Forwarded by Stinson Gibner/HOU/ECT on 10/10/2000 \n08:10 PM ---------------------------\n\n\n\tCarol Coats\n\t09/29/2000 02:36 PM\n\t\nTo: Celeste Roberts/HOU/ECT@ECT\ncc: Stinson Gibner/HOU/ECT@ECT \nSubject: Datren Williams Acceptance\n\n\nCeleste, \n\nI just received Datren Williams' acceptance with the following note attached:\n\n\"My graduation date (Ph.D. Candidate from LSU) is Dec. 2000.  Celeste Roberts\nhas informed me that I would have the option of starting work Feb. 2001.  I am\nunder the impression that I will start in Feb. 2001.  My offer letter has a \nstart date \nof Aug. 2001.  If this is a problem, please give me a call.  \nLooking forward to working at Enron.\n\nThanks a million,\nDatren W.\"\n\nPlease let me know if he may in fact start in Feb. 2001, and if so, do you \nhave\na specific date for him, or may he choose?\n\nThanks, Celeste,\nCarol\n\n\n\n\n\n\n\n\n\n"
+        },
+        "eval_gen_agent_output": {
+            "query": "What did Carol Coats and Celeste Roberts discuss regarding Datren Williams' start date?",
+            "context_query_from": "What did Carol Coats and Celeste Roberts discuss regarding Datren Williams' start date in the email from Vince J Kaminski?",
+            "context_query_date": "What did Carol Coats and Celeste Roberts discuss regarding Datren Williams' start date in October 2000?",
+            "context_query_combined": "What did Carol Coats and Celeste Roberts discuss regarding Datren Williams' start date in the email from Vince J Kaminski in October 2000?",
+            "answer": "Celeste approved Datren Williams' February start date.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "893",
+            "subject": "United Oil & Minerals, Inc.",
+            "timestamp": 946539540,
+            "date": "1999-12-30 02:39:00",
+            "from": "Donald P Reinhardt",
+            "to": "['Daren J Farmer']",
+            "body": "Please establish a spot ticket for United Oil & Minerals, Inc. at meter 5053 \nfor January.  The ticket will be priced at 100% IF/HSC less $0.14 and provide \nfor 1,400 MMBtu/d.   This spot deal will be executed under Globla contract \n96002441.\n\nPlease call if I can be of any additional assistance.\n\nThanks!\n\nDonald\nx37008"
+        },
+        "eval_gen_agent_output": {
+            "query": "What is the price for the spot ticket for United Oil & Minerals, Inc. at meter 5053?",
+            "context_query_from": "I received a request from Donald P Reinhardt about the price for the spot ticket for United Oil & Minerals, Inc. at meter 5053.",
+            "context_query_date": "I received a request in December 1999 about the price for the spot ticket for United Oil & Minerals, Inc. at meter 5053.",
+            "context_query_combined": "I received a request from Donald P Reinhardt in December 1999 about the price for the spot ticket for United Oil & Minerals, Inc. at meter 5053.",
+            "answer": "The ticket will be priced at 100% IF/HSC less $0.14.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    },
+    {
+        "email": {
+            "thread_id": "596",
+            "subject": "Trial Lawyer",
+            "timestamp": 989923020,
+            "date": "2001-05-15 06:37:00",
+            "from": "Twanda Sweet",
+            "to": "['dharvin@velaw.com']",
+            "body": "I anticipate that Enron may have some legal issues in New York similar to the \nissues Enron has faced in California.  Can you recommend a top notch trial \nlawyer (similar to yourself) at any firms in New York?\n\nThanks."
+        },
+        "eval_gen_agent_output": {
+            "query": "Can you recommend a top notch trial lawyer at any firms in New York?",
+            "context_query_from": "I received an email from Twanda Sweet asking if I can recommend a top notch trial lawyer at any firms in New York.",
+            "context_query_date": "I received an email in May 2001 asking if I can recommend a top notch trial lawyer at any firms in New York.",
+            "context_query_combined": "I received an email from Twanda Sweet in May 2001 asking if I can recommend a top notch trial lawyer at any firms in New York.",
+            "answer": "Yes, I can recommend a top notch trial lawyer in New York.",
+            "specificness": 2,
+            "valid_flag": true
+        }
+    }
+]

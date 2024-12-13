@@ -2,7 +2,6 @@ chroma_db/1c745aaf-ade6-45c5-ba46-794844e041d7 filter=lfs diff=lfs merge=lfs -te
 chroma_db/2b69eacb-e785-4886-b0e8-6e45b7d9d463 filter=lfs diff=lfs merge=lfs -text
 chroma_db/3acd1b57-221c-4f4f-a3b5-836944c70de1 filter=lfs diff=lfs merge=lfs -text
 chroma_db/74f3842e-06a6-4077-8a13-501b40304953 filter=lfs diff=lfs merge=lfs -text
-chroma_db/chroma.sqlite3 filter=lfs diff=lfs merge=lfs -text
 chroma_db/1c745aaf-ade6-45c5-ba46-794844e041d7/data_level0.bin filter=lfs diff=lfs merge=lfs -text
 chroma_db/3acd1b57-221c-4f4f-a3b5-836944c70de1/length.bin filter=lfs diff=lfs merge=lfs -text
 chroma_db/74f3842e-06a6-4077-8a13-501b40304953/link_lists.bin filter=lfs diff=lfs merge=lfs -text
