@@ -15,9 +15,13 @@ Since git-lfs is not free, we decided to host the `chroma.sqlite3` instance of o
 
 If the link is down (or any other technical problems arise), feel free to email me at julian.hans@student.uni-luebeck.de and I will be happy to assist!
 
+Install the poetry project by running:
+```poetry install```
+and continue to quickstart.
+
 ## Quickstart:
 After making sure you meet all requirements, run the interactive interface using 
-```poetry run python main.py```
+```poetry run python /askyourmail/src/main.py```
 
 ## Populating chroma_db:
 With `askyourmail/src/data/Processor.py` you can generate a new collection for the chroma database. You can change the dataset from `askyourmail/src/util/constants.py`, but will have to parse email dataset that differ from our format beforehand. 
