@@ -11,7 +11,7 @@ Copy the `.env.example`file and rename it to `.env`, populating the required key
 
 Make sure that the chroma_db directory contains a chroma database with a valid collection. If there is none (or you want to generate your own, see section Populating chroma_db.)
 
-Since git-lfs is not free, we decided to host the `chroma.sqlite3` instance of our experiments [here](https://we.tl/t-iwYuvSbgcZ). Move it into `chroma_db`, the other required files are prepopulated.
+Since git-lfs is not free, we decided to host the `chroma.sqlite3` instance of our experiments [here](https://we.tl/t-k7MGXW7Pbl). Move the contents of the zip it into `chroma_db` - you should be good to query away!
 
 If the link is down (or any other technical problems arise), feel free to email me at julian.hans@student.uni-luebeck.de and I will be happy to assist!
 

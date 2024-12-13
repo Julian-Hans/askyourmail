@@ -6,3 +6,5 @@ __pycache__
 .gradio
 chroma_db/chroma.sqlite3
 chroma_db/_chroma.sqlite3
+chroma_db/*
+chroma_db.zip
